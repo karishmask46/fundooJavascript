@@ -1,0 +1,261 @@
+.maindiv {
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   border: 0px solid gainsboro;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+}
+
+
+.subdic {
+   height: 500px;
+   width: 500px;
+   display: flex;
+   border: 1px solid gainsboro;
+   flex-direction: column;
+   flex-wrap: wrap;
+   border-radius: 10px;
+}
+
+
+
+.content1 {
+   height: 12%;
+   width: 100%;
+   font-size: 30px;
+   font-weight: 500;
+   border: 0px solid black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   top: 20px;
+}
+
+.k1 {
+   width: 100%;
+   font-size: 25px;
+   height: 10%;
+   border: 0px solid red;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.content3 {
+   height: 12%;
+   width: 95%;
+   border: 0px solid gainsboro;
+   display: flex;
+   position: relative;
+   left: 25px;
+}
+
+.content4 {
+   height: 12%;
+   width: 95%;
+   border: 0px solid gainsboro;
+   display: flex;
+   position: relative;
+   left: 25px;
+}
+
+.k2 {
+   width: 100%;
+   font-size: medium;
+   height: 5%;
+   display: flex;
+   border: 0px solid red;
+   align-items: flex-start;
+   justify-content: center;
+}
+
+.box1 {
+   position: relative;
+   left: 65px;
+   border: 0px;
+   color: rgb(0, 115, 255);
+   background: 0px;
+   font-weight: 600;
+}
+
+.box {
+   display: flex;
+   border: 0px solid blue;
+   position: relative;
+   left: 55px;
+   bottom: -55px;
+   color: rgb(86, 82, 82);
+}
+
+.box2 {
+   position: relative;
+   left: 65px;
+   border: 0px;
+   color: rgb(0, 115, 255);
+   background: 0px;
+   font-weight: 600;
+}
+
+.box4 {
+   position: relative;
+   left: 60px;
+   top: 10px;
+   border: 0px;
+   color: rgb(0, 115, 255);
+   background: 0px;
+}
+
+.p3 {
+   display: flex;
+   border: 0px solid greenyellow;
+   height: 10%;
+   width: 100%;
+   position: relative;
+   left: 60px;
+   top: 40px;
+}
+
+.box5 {
+   position: relative;
+   left: 55px;
+   top: 70px;
+   border: 0px;
+   color: rgb(0, 115, 255);
+   background: 0px;
+   font-weight: 600;
+}
+
+.box6 {
+   position: relative;
+   left: 400px;
+   top: 50px;
+   border: 0px;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 30px;
+   width: 12%;
+   background: rgb(0, 115, 255);
+   border-radius: 5px;
+}
+
+.error {
+   color: red;
+}
+
+.content3 {
+   position: relative;
+   top: 10px;
+   left: 60px;
+}
+
+#user {
+   position: absolute;
+   font-size: 1rem;
+   left: 0;
+   top: 38%;
+   transform: translateY(-50%);
+   background-color: white;
+   color: gray;
+   padding: 0 0.3rem;
+   margin: 0 0.5rem;
+   transition: .1s ease-out;
+   transform-origin: left top;
+   pointer-events: none;
+}
+
+#name {
+   font-size: 1rem;
+   outline: none;
+   width: 370px;
+   height: 15px;
+   border: 1px solid rgba(128, 128, 128, 0.587);
+   border-radius: 5px;
+   padding: 1rem 0.7rem;
+   color: gray;
+   transition: 0.1s ease-out;
+}
+
+#name:focus {
+   border-color: #6200EE;
+}
+
+#name:focus+#user {
+   color: #6200EE;
+   top: 0;
+   transform: translateY(-50%) scale(.9);
+}
+
+#name:not(:placeholder-shown)+#user {
+   top: 0;
+   transform: translateY(-50%) scale(.9);
+}
+
+#user {
+   position: absolute;
+   font-size: 1rem;
+   left: 0;
+   top: 38%;
+   transform: translateY(-50%);
+   background-color: white;
+   color: gray;
+   padding: 0 0.3rem;
+   margin: 0 0.5rem;
+   transition: .1s ease-out;
+   transform-origin: left top;
+   pointer-events: none;
+}
+
+.content4 {
+   position: relative;
+   top: 10px;
+   left: 60px;
+}
+
+
+#soft {
+   position: absolute;
+   font-size: 1rem;
+   left: 0;
+   top: 38%;
+   transform: translateY(-50%);
+   background-color: white;
+   color: gray;
+   padding: 0 0.3rem;
+   margin: 0 0.5rem;
+   transition: .1s ease-out;
+   transform-origin: left top;
+   pointer-events: none;
+}
+
+#host {
+   font-size: 1rem;
+   outline: none;
+   width: 370px;
+   height: 15px;
+   border: 1px solid rgba(128, 128, 128, 0.587);
+   border-radius: 5px;
+   padding: 1rem 0.7rem;
+   color: gray;
+   transition: 0.1s ease-out;
+}
+
+#host:focus {
+   border-color: #6200EE;
+}
+
+#host:focus+#soft {
+   color: #6200EE;
+   top: 0;
+   transform: translateY(-50%) scale(.9);
+}
+
+#host:not(:placeholder-shown)+#soft {
+   top: 0;
+   transform: translateY(-50%) scale(.9);
+}

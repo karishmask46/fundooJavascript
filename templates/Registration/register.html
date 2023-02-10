@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="/scripts/register.js"></script>
+    <title>registration</title>
+</head>
+<body>
+    <div class="maindiv">
+        <div class="subdiv">
+            <div class="content">
+                <form  id="registrationForm" name="registration">
+                    <div class="content1">
+                        <span style="color:blue;">F</span>
+                        <span style="color:red;">u</span>
+                        <span style="color:rgba(255, 166, 0, 0.785);">n</span>
+                        <span style="color:blue;">d</span>
+                        <span style="color:green;">o</span>
+                        <span style="color:red;">o</span>
+                    </div>
+                    <div class="content2"><span>Create your Fundoo
+                            account</span></div>
+
+                    <div class="con1">
+                        <div class="material-textfield">
+                            <input id="let" class="first" placeholder=" " type="text" name="firstname" required>
+                            <label id="get" class="label" for="firstname">firstname</label>
+                        </div>
+                        <div class="material-textfield1">
+                            <input id="host" class="last" placeholder=" " type="text" name="lastName" required>
+                            <label id="soft" class="lab1" for="LastName">LastName</label>
+                        </div>
+                    </div>
+                    <div class="content3">
+                        <input id="name" placeholder=" " type="text" name="email"  required>
+                        <label id="user" for="Username">Username</label>
+
+                    </div>
+                    <span class="content4">you can use letters,numbers & periods</span>
+                    <div class="content5">use my current email address instead</div>
+                    <div class="con1">
+                        <div class="material-textfield">
+                            <input class="pass" placeholder=" " type="password" id="password" name="password" required>
+                            <label class="word" for="password">Password</label>
+                        </div>
+                        <div class="material-textfield1">
+                            <input  class="confirm" placeholder=" "  id="pass" type="password" name="ConfirmPassword" required>
+                            <label class="password" for="ConfirmPassword">ConfirmPassword</label>
+                        </div>
+                    </div>
+
+                    <div class="content7">use 8 or more characters with a mix of letters,numbers & symbols</div>
+
+                    <div class="box">
+                         <input type="checkbox" id="showPassword" /> Show password
+                    </div>
+                    <div class="box2">
+                        <button class="box3">Sign in instead</button>
+                        <button class="box4" type="submit">Next</button>
+                    </div>
+                </form>
+            </div>
+            <!-- //image part -->
+            <div class="logo">
+                <img src="/assets/account.svg" alt="">
+                <div class="para">
+                    <p>One account. All of Google working for you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
