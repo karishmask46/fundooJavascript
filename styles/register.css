@@ -269,11 +269,13 @@ p {
     top: 0;
     transform: translateY(-50%) scale(.9);
 }
+
 .content3 {
     position: relative;
     top: 20px;
     left: 30px;
 }
+
 #user {
     position: absolute;
     font-size: 1rem;
@@ -305,13 +307,13 @@ p {
     border-color: #6200EE;
 }
 
-#name:focus + #user {
+#name:focus+#user {
     color: #6200EE;
     top: 0;
     transform: translateY(-50%) scale(.9);
 }
 
-#name:not(:placeholder-shown) + #user {
+#name:not(:placeholder-shown)+#user {
     top: 0;
     transform: translateY(-50%) scale(.9);
 }
@@ -321,6 +323,7 @@ form {
     height: 100%;
     width: 100%;
 }
+
 .material-textfield {
     position: relative;
     left: 30px;
@@ -367,6 +370,7 @@ form {
     top: 0;
     transform: translateY(-50%) scale(.9);
 }
+
 .material-textfield {
     position: relative;
     left: 30px;
@@ -413,9 +417,230 @@ form {
     top: 0;
     transform: translateY(-50%) scale(.9);
 }
+
 /* label.error {
     color: red;
     font-weight: 100;
     font-size: 14px;
     display: block;
 } */
+@media (device-width: 768px) and (device-height: 1024px) {
+    .logo {
+        display: none;
+    }
+
+    .subdiv {
+        width: 450px;
+        height: 600px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .con1 {
+        width: 430px;
+    }
+
+    #name {
+        width: 380px;
+    }
+
+    .box4 {
+        position: relative;
+        left: 160px;
+    }
+}
+@media (device-width: 800px) and (device-height: 1280px) {
+    .logo {
+        display: none;
+    }
+
+    .subdiv {
+        width: 450px;
+        height: 600px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .con1 {
+        width: 430px;
+    }
+
+    #name {
+        width: 380px;
+    }
+
+    .box4 {
+        position: relative;
+        left: 160px;
+    }
+}
+
+@media (device-width: 360px) and (device-height: 640px) {
+    .logo {
+        display: none;
+    }
+
+    .subdiv {
+        position: relative;
+        left: 30px;
+        width: 400px;
+        height: 600px;
+        border: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .con1 {
+        width: 430px;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #let {
+        width: 350px;
+    }
+
+    #host {
+        width: 350px;
+    }
+
+    #name {
+        width: 350px;
+    }
+
+    #password {
+        width: 350px;
+    }
+
+    #pass {
+        width: 350px;
+    }
+
+    .box4 {
+        position: relative;
+        left: 160px;
+    }
+
+    .material-textfield1 {
+        position: relative;
+        left: 30px;
+    }
+}
+@media (device-width: 360px) and (device-height: 740px) {
+    .logo {
+        display: none;
+    }
+
+    .subdiv {
+        position: relative;
+        left: 30px;
+        width: 400px;
+        height: 600px;
+        border: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .con1 {
+        width: 430px;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #let {
+        width: 350px;
+    }
+
+    #host {
+        width: 350px;
+    }
+
+    #name {
+        width: 350px;
+    }
+
+    #password {
+        width: 350px;
+    }
+
+    #pass {
+        width: 350px;
+    }
+
+    .box4 {
+        position: relative;
+        left: 160px;
+    }
+
+    .material-textfield1 {
+        position: relative;
+        left: 30px;
+    }
+}
+@media (device-width: 320px) and (device-height: 658px) {
+    .logo {
+        display: none;
+    }
+
+    .subdiv {
+        position: relative;
+        left: 30px;
+        width: 400px;
+        height: 600px;
+        border: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .con1 {
+        width: 430px;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #let {
+        width: 350px;
+    }
+
+    #host {
+        width: 350px;
+    }
+
+    #name {
+        width: 350px;
+    }
+
+    #password {
+        width: 350px;
+    }
+
+    #pass {
+        width: 350px;
+    }
+
+    .box4 {
+        position: relative;
+        left: 160px;
+    }
+
+    .material-textfield1 {
+        position: relative;
+        left: 30px;
+    }
+}
