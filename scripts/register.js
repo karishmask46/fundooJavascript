@@ -2,11 +2,11 @@ $(function () {
   $("#registrationForm").on("submit", function (event) {
     event.preventDefault();
     let obj = {
-      firstName: $(".first").val(),
-      lastName: $(".last").val(),
+      firstName: $("#let").val(),
+      lastName: $("#host").val(),
       email: $("#name").val(),
-      password: $(".pass").val(),
-      ConfirmPassword: $(".confirm").val(),
+      password: $("#password").val(),
+      ConfirmPassword: $("#pass").val(),
       service: "advance"
     }
     $.ajax({

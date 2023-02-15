@@ -644,3 +644,132 @@ form {
         left: 30px;
     }
 }
+@media (device-width: 384px) and (device-height: 640px) {
+    .logo {
+        display: none;
+    }
+
+    .subdiv {
+        position: relative;
+        left: 30px;
+        width: 400px;
+        height: 600px;
+        border: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .con1 {
+        width: 430px;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #let {
+        width: 350px;
+    }
+
+    #host {
+        width: 350px;
+    }
+
+    #name {
+        width: 350px;
+    }
+
+    #password {
+        width: 350px;
+    }
+
+    #pass {
+        width: 350px;
+    }
+
+    .box4 {
+        position: relative;
+        left: 160px;
+    }
+
+    .material-textfield1 {
+        position: relative;
+        left: 30px;
+    }
+}
+@media (device-width: 600px) and (device-height: 1024px) {
+    .logo {
+        display: none;
+    }
+    .maindiv {
+        margin: -8px;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border: 0px solid red;
+        padding: 0px;
+    }
+    .subdiv {
+        width: 600px;
+        height: 800px;
+        border:0px solid red;
+    }
+
+    .content {
+        width: 100%;
+    }
+.content2{
+    position: relative;
+    top: 0px;
+}
+.content1{
+    font-size: 33px;
+    position: relative;
+    top: 36px;
+}
+    .con1 {
+        width: 430px;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #let {
+        width: 500px;
+    }
+
+    #host {
+        width: 500px;
+    }
+
+    #name {
+        width: 500px;
+    }
+
+    #password {
+        width: 500px;
+    }
+
+    #pass {
+        width: 500px;
+    }
+    .box3{
+        position: relative;
+        left: -31px;
+    }
+
+    .box4 {
+        position: relative;
+        left: 207px;
+    }
+
+    .material-textfield1 {
+        position: relative;
+        left: 30px;
+    }
+}

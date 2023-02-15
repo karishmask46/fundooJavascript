@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.6.3"
+    "deparam.js": "^2.1.4",
+    "jquery": "^3.6.3",
+    "jqueryrouter": "^2.2.8"
   }
 }

@@ -196,21 +196,6 @@
    transform: translateY(-50%) scale(.9);
 }
 
-#user {
-   position: absolute;
-   font-size: 1rem;
-   left: 0;
-   top: 38%;
-   transform: translateY(-50%);
-   background-color: white;
-   color: gray;
-   padding: 0 0.3rem;
-   margin: 0 0.5rem;
-   transition: .1s ease-out;
-   transform-origin: left top;
-   pointer-events: none;
-}
-
 .content4 {
    position: relative;
    top: 10px;
@@ -258,4 +243,25 @@
 #host:not(:placeholder-shown)+#soft {
    top: 0;
    transform: translateY(-50%) scale(.9);
+}
+@media (device-width: 800px) and (device-height: 1280px) {
+   
+}
+
+@media (device-width: 360px) and (device-height: 640px) {
+  
+}
+@media (device-width: 360px) and (device-height: 740px) {
+  
+}
+@media (device-width: 320px) and (device-height: 658px) {
+   
+}
+@media (device-width: 384px) and (device-height: 640px) {
+   
+}
+@media (device-width: 600px) and (device-height: 1024px) {
+   
+
+   
 }

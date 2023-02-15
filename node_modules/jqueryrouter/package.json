@@ -1,0 +1,50 @@
+{
+  "name": "jqueryrouter",
+  "version": "2.2.8",
+  "description": "JQuery router is a routing plugin for jQuery",
+  "main": "dist/js/jquery.router.js",
+  "module": "dist/js/jquery.router.js",
+  "typings": "src/typings/jquery.router.d.ts",
+  "scripts": {
+    "start": "npm run build && node server.js",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scssyworks/jqueryrouter.git"
+  },
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "router",
+    "routing",
+    "SPA",
+    "single page applications"
+  ],
+  "author": "Sachin Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scssyworks/jqueryrouter/issues"
+  },
+  "homepage": "https://github.com/scssyworks/jqueryrouter#readme",
+  "peerDependencies": {
+    "jquery": "^3.4.1",
+    "deparam.js": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "bootstrap": "^4.4.1",
+    "deparam.js": "^2.1.1",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.4.1",
+    "rollup-plugin-terser": "^5.3.0"
+  }
+}
