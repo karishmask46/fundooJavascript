@@ -1,0 +1,87 @@
+.getnote {
+    height: 100vh;
+    width: 700px;
+    border: 1px solid gainsboro;
+    box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* position: relative;
+    top: 200px;
+    right: 300px; */
+    z-index: 2;
+}
+
+#someId {
+    border: 1px solid red;
+}
+
+.listnotes {
+    height: 120px;
+    width: 250px;
+    border: 1px solid gainsboro;
+    box-shadow: 2px 2px 2px 2px gainsboro;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titlediv {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pushpindiv {
+    height: 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#gettitle {
+    height: 30px;
+    width: 100%;
+    font-weight: 600;
+}
+
+#getdescription {
+    height: 30px;
+    width: 100%;
+}
+
+.iconslist1 {
+    height: 45px;
+    width: 100%;
+    border: 0px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.listicons1 {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#pushpin {
+    visibility: hidden;
+}
+
+.getnote:hover #pushpin {
+    visibility: visible;
+}
+
+.listicons1 {
+    visibility: hidden;
+}
+
+.getnote:hover .listicons1 {
+    visibility: visible;
+}

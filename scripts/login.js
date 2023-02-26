@@ -11,6 +11,7 @@ $(function () {
       data: obj,
       success: function (data) {
         console.log(data);
+        localStorage.setItem('token', (data.id))
         alert("sigin successfull.");
       },
       error: function (error) {
@@ -19,8 +20,7 @@ $(function () {
       }
       
     });
-    localStorage.setItem('token', JSON.stringify(obj.email))
-    window.location.replace('http://127.0.0.1:5500/templates/dashboard/dashboard.html')
+    
   });
 });
 
