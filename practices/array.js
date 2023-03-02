@@ -33,3 +33,23 @@ $(function() {
     $("#mainbox").append(arrayelement)
 })
 ;
+var listOfNotes = $('.getnote');
+var innerText = $('.listnotes');
+$.each(arrayData, function (index, item) {
+  var titleText = $('.titlediv')
+  titleText.append($('.pushpindiv').append($('#gettitle').text(item.title), $('#pushpin').attr('src', '../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg')
+  ));
+  titleText.append($('#desc').append($('#getdescription').text(item.description)))
+  var imageList = $('.iconslist1');
+  imageList.append($('.listicons1').append($('<img>').attr('src', '../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg')))
+  imageList.append($('.listicons1').append($('<img>').attr('src', '../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg')))
+  imageList.append($('.listicons1').append($('<img>').attr('src', '../assets/palette_FILL0_wght400_GRAD0_opsz48.svg')))
+  imageList.append($('.listicons1').append($('<img>').attr('src', '../assets/image_FILL0_wght400_GRAD0_opsz48.svg')))
+  imageList.append($('.listicons1').append($('<img>').attr('src', '../assets/archive_FILL0_wght400_GRAD0_opsz48.svg').attr('archive-id',item).on('click',function(){
+    setArchive(item)
+  })))
+  imageList.append($('<img>').attr('src', '../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg'))
+  titleText.append(innerText);
+  imageList.append(innerText);
+  listOfNotes.append(innerText)
+})

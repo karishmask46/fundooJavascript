@@ -34,4 +34,20 @@
     $('table').append('<tr><td>'+item.name+'</td><td>'+item.phone+'</td><td>'+item.gender+'</td><tr>')
    })
  })
+ $(function(){
+    $("#btn").on("click",function(){
+        $("img").animate({
+            opacity:'1',
+            left:'100px',
+            height:'500px',
+            width:'500px'
+        },2000,function(){
+            $("img").animate({
+                opacity:'1',
+                left:'0px',
+                height:'250px',
+                width:'250px'},2000)  
+        })
+    })
+ })
  

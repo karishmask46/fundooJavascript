@@ -1,121 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="/scripts/dashboard.js"></script>
+    <script type="module" src="/scripts/services/user.js"></script>
+    <script  src="/scripts/dashboard.js"></script>
+    <script  src="/jquery/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="/jquery/jquery-ui.structure.css">
+    <link rel="stylesheet" href="/jquery/jquery-ui.theme.css">
     <link rel="stylesheet" href="/styles/dashboard.css">
     <title>Dashboard</title>
 </head>
-
 <body>
-    <header class="header">
-        <div class="innerhead">
-            <div class="keep">
-                <img id="menu" src="/assets/menu_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt=""
-                    onclick="toggleNav()">
-                <img src="/assets/keep_2020q4_48dp.png" height="40px" width="38px" alt="">
-                <span class="keeptext">Keep</span>
-            </div>
-            <div class="search">
-                <div class="searchdiv">
-                    <input class="searchinput" type="text" placeholder="search">
-                    <img id="searchicon" src="/assets/search_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
-                        width="25px">
+    <div class="main">
+        <header class="header">
+            <div class="innerhead">
+                <div class="keep">
+                    <img id="menu" src="/assets/menu_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="" onclick="toggleNav()">
+                    <img src="/assets/keep_2020q4_48dp.png" height="40px" width="38px" alt="">
+                    <span class="keeptext">Keep</span>
                 </div>
-                <img src="/assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
-                <img src="/assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
-                <img src="/assets/settings_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+                <div class="search">
+                    <div class="searchdiv">
+                        <input class="searchinput" type="text" placeholder="search">
+                        <img id="searchicon" src="/assets/search_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                            width="25px">
+                    </div>
+                    <img src="/assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+                    <img src="/assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+                    <img src="/assets/settings_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+                </div>
+                <div class="account">
+                    <img src="/assets/apps_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+                    <img src="/assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+                </div>
             </div>
-            <div class="account">
-                <img src="/assets/apps_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
-                <img src="/assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+        </header>
+        <div class="container">
+            <div class="sidenav" id="side">
+                <div class="sidenavicons">
+                    <img id="sidenavimg1" src="/assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" height="30px"
+                        width="30px" alt="">
+                    <label id="sidenavelabel" for="">Notes</label>
+                </div>
+                <div class="sidenavicons">
+                    <img id="sidenavimg2" src="/assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" height="30px"
+                        width="30px" alt="">
+                    <label id="sidenavelabel" for="">Remainder</label>
+                </div>
+                <div class="sidenavicons">
+                    <img id="sidenavimg3" src="/assets/label_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
+                        alt="">
+                    <label id="sidenavelabel" for="">Sign</label>
+                </div>
+                <div class="sidenavicons">
+                    <img id="sidenavimg4" src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
+                        alt="">
+                    <label id="sidenavelabel" for="">Edit labels</label>
+                </div>
+                <div class="sidenavicons">
+                    <img id="sidenavimg5" src="/assets/archive_FILL0_wght400_GRAD0_opsz48.svg" height="30px"
+                        width="30px" alt="">
+                    <label id="sidenavelabel" for="">Archive</label>
+                </div>
+                <div class="sidenavicons">
+                    <img id="sidenavimg6" src="/assets/delete_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
+                        alt="">
+                    <label id="sidenavelabel" for="">Trash</label>
+                </div>
             </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="sidenav" id="side">
-            <div class="sidenavicons">
-                <img id="sidenavimg" src="/assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
-                    alt="">
-                <label id="sidenavelabel" for="">Notes</label>
-            </div>
-            <div class="sidenavicons">
-                <img id="sidenavimg" src="/assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" height="30px"
-                    width="30px" alt="">
-                <label id="sidenavelabel" for="">Remainder</label>
-            </div>
-            <div class="sidenavicons">
-                <img id="sidenavimg" src="/assets/label_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
-                    alt="">
-                <label id="sidenavelabel" for="">Sign</label>
-            </div>
-            <div class="sidenavicons">
-                <img id="sidenavimg" src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
-                    alt="">
-                <label id="sidenavelabel" for="">Edit labels</label>
-            </div>
-            <div class="sidenavicons">
-                <img id="sidenavimg" src="/assets/archive_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
-                    alt="">
-                <label id="sidenavelabel" for="">Archive</label>
-            </div>
-            <div class="sidenavicons">
-                <img id="sidenavimg" src="/assets/delete_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
-                    alt="">
-                <label id="sidenavelabel" for="">Trash</label>
-            </div>
-        </div>
-        <div class="centerportion">
-            <div class="createnote">
-                <form id="createnote">
-                    <div class="inputpart">
-                        <input id="title" type="text" placeholder="Title" name="title">
-                        <div class="iconsoftitile">
-                            <div>
-                                <input type="text" id="description" placeholder="Take a note" name="description">
+            <div class="centerportion">
+                <div class="createnote">
+                    <form id="createnote">
+                        <div class="inputpart">
+                            <input id="title" type="text" placeholder="Title" name="title">
+                            <div class="iconsoftitile">
+                                <div>
+                                    <input type="text" id="description" placeholder="Take a note" name="description">
+                                </div>
+                                <div id="iconstitle">
+                                    <img src="/assets/check_box_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                                        width="25px">
+                                    <img src="/assets/brush_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                                        width="25px">
+                                    <img src="/assets/image_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                                        width="25px">
+                                </div>
                             </div>
-                            <div id="iconstitle">
-                                <img src="/assets/check_box_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                        </div>
+                        <div class="iconslist">
+                            <div class="listicons">
+                                <img src="/assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
                                     width="25px">
-                                <img src="/assets/brush_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                                <img src="/assets/person_add_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
                                     width="25px">
+
+                                <img src="/assets/palette_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                                    width="25px">
+
                                 <img src="/assets/image_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
                                     width="25px">
+
+                                <img src="/assets/archive_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                                    width="25px">
+                                <img src="/assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                                    width="25px">
+                            </div>
+                            <div>
+                                <button id="closebutton" type="submit">Close</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="iconslist">
-                        <div class="listicons">
-                            <img src="/assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
-                                width="25px">
-                            <img src="/assets/person_add_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
-                                width="25px">
+                    </form>
+                </div>
+                <div class="getnote">
 
-                            <img src="/assets/palette_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px" width="25px">
-
-                            <img src="/assets/image_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px" width="25px">
-
-                            <img src="/assets/archive_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px" width="25px">
-                            <img src="/assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
-                                width="25px">
-                        </div>
-                        <div>
-                            <button id="closebutton" type="submit">Close</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
-            <div class="getnote">
 
-            </div>
         </div>
+        <div class="colorbox">
 
+        </div>
+       
     </div>
-        
 </body>
 
 </html>

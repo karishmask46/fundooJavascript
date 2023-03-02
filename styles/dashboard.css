@@ -1,9 +1,12 @@
 .main {
-    height: 100vh;
-    width: 100vw;
+    height: auto;
+    width: auto;
     border: 0px solid red;
     display: flex;
-
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
 }
 
 .header {
@@ -99,7 +102,7 @@
     flex-direction: column;
     position: relative;
     left: -20px;
-    z-index: 1;
+    z-index: 2;
     overflow-x: hidden;
     transition: 0.5s;
 }
@@ -131,7 +134,7 @@
     justify-content: flex-start;
 }
 
-#sidenavimg {
+#sidenavimg1 #sidenavimg2 #sidenavimg3 #sidenavimg4 #sidenavimg5 #sidenavimg6 {
     height: 30px;
     width: 30px;
     display: flex;
@@ -154,7 +157,7 @@
 }
 .centerportion{
     height: 500px;
-    width: 900px;
+    width: 759px;
     display: flex;
     flex-wrap: wrap;
     flex-direction:row;
@@ -226,34 +229,28 @@
     align-items: center;
     justify-content: space-around;
 }
-
-.getnote {
-    height: auto;
-    width: auto;
-    /* border: 1px solid gainsboro; */
-    /* box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%); */
-    border-radius: 5px;
-    display: flex;
+.getnote{
     flex-direction: row;
-    flex-wrap: wrap;
-    /* position: relative;
-    top: 200px;
-    right: 300px;
-    z-index: 2; */
-}
+    box-sizing: border-box;
+    display: flex;
+    margin-left: 5%;
+   flex-flow: row wrap;
+    cursor: pointer;
+    z-index: 1;
 
+}
 #someId {
     border: 1px solid red;
 }
 
 .listnotes {
-    height: 120px;
     width: 250px;
-    border: 1px solid gainsboro;
-    box-shadow: 2px 2px 2px 2px gainsboro;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
+    max-height: 130px;
+    margin: 15px auto 16px auto;
+    border: 1px solid rgb(186, 184, 184);
+     padding:8px;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .titlediv {
@@ -344,5 +341,25 @@
     display: block;
     cursor: pointer;
   }
-  
-  
+  .colour{
+    height: 50px;
+    width: 50px;
+   border: 0px solid blue;
+  display: flex;
+  justify-content: space-around;
+}
+
+.colors{
+height: 40px;
+width: 40px;
+border-radius: 100px;
+border: 0px solid red;
+}
+.colorbox{
+    display: flex;
+    height: 50px;
+    width: 200px;
+    border: 0px solid red;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

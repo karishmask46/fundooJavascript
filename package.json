@@ -1,10 +1,8 @@
 {
+  "type": "module",
   "name": "fundoojavascript",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +12,18 @@
     "deparam.js": "^2.1.4",
     "jquery": "^3.6.3",
     "jqueryrouter": "^2.2.8"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karishmask46/fundooJavascript.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/karishmask46/fundooJavascript/issues"
+  },
+  "homepage": "https://github.com/karishmask46/fundooJavascript#readme",
+  "description": ""
+  
 }
+
