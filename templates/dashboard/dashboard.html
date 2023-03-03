@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script type="module" src="/scripts/services/user.js"></script>
     <script  src="/scripts/dashboard.js"></script>
     <script  src="/jquery/jquery-ui.js"></script>
     <link rel="stylesheet" href="/jquery/jquery-ui.css">
@@ -61,12 +60,12 @@
                         alt="">
                     <label id="sidenavelabel" for="">Edit labels</label>
                 </div>
-                <div class="sidenavicons">
+                <div class="sidenavicons" onclick="getarchivenotes()">
                     <img id="sidenavimg5" src="/assets/archive_FILL0_wght400_GRAD0_opsz48.svg" height="30px"
                         width="30px" alt="">
                     <label id="sidenavelabel" for="">Archive</label>
                 </div>
-                <div class="sidenavicons">
+                <div class="sidenavicons" onclick="gettrashnote()">
                     <img id="sidenavimg6" src="/assets/delete_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
                         alt="">
                     <label id="sidenavelabel" for="">Trash</label>
@@ -126,6 +125,9 @@
         </div>
        
     </div>
+   <div id="methods" style="display: none;">
+    <p id="updatetitle"></p>
+   </div>
 </body>
 
 </html>
