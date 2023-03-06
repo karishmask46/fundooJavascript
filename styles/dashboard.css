@@ -208,7 +208,7 @@
     border: 0px solid red;
 }
 
-.closebutton {
+#closebutton {
     border: none;
     background: none;
     position: relative;

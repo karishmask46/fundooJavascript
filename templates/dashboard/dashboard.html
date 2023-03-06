@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script  src="/scripts/dashboard.js"></script>
-    <script  src="/jquery/jquery-ui.js"></script>
+    <script src="/scripts/dashboard.js"></script>
+    <script src="/jquery/jquery-ui.js"></script>
     <link rel="stylesheet" href="/jquery/jquery-ui.css">
     <link rel="stylesheet" href="/jquery/jquery-ui.structure.css">
     <link rel="stylesheet" href="/jquery/jquery-ui.theme.css">
     <link rel="stylesheet" href="/styles/dashboard.css">
     <title>Dashboard</title>
 </head>
+
 <body>
     <div class="main">
         <header class="header">
             <div class="innerhead">
                 <div class="keep">
-                    <img id="menu" src="/assets/menu_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="" onclick="toggleNav()">
+                    <img id="menu" src="/assets/menu_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt=""
+                        onclick="toggleNav()">
                     <img src="/assets/keep_2020q4_48dp.png" height="40px" width="38px" alt="">
                     <span class="keeptext">Keep</span>
                 </div>
@@ -40,7 +43,7 @@
         </header>
         <div class="container">
             <div class="sidenav" id="side">
-                <div class="sidenavicons">
+                <div class="sidenavicons" onclick="getnotelist()">
                     <img id="sidenavimg1" src="/assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" height="30px"
                         width="30px" alt="">
                     <label id="sidenavelabel" for="">Notes</label>
@@ -123,11 +126,11 @@
         <div class="colorbox">
 
         </div>
-       
+
     </div>
-   <div id="methods" style="display: none;">
-    <p id="updatetitle"></p>
-   </div>
+    <div id="methods" style="display: none;">
+        <p id="updatetitle"></p>
+    </div>
 </body>
 
 </html>

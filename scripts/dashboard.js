@@ -39,7 +39,7 @@ $(function () {
       console.log(arrayData);
       arrayData.forEach(function (item) {
         $('.getnote').append(`<div class="listnotes">
-          <div class= "titlediv" id="${item.title}" title="${item.description}" onclick="openPopUp(this)" >
+          <div class= "titlediv" id="${item.title}" title="${item.description}" value="${item.id}" onclick="openPopUp(this)" >
               <div class="pushpindiv">
                   <p class="gettitle" >`+ item.title + `</p>
                   <dialog id="myDialog">This is an open dialog window</dialog>
@@ -190,7 +190,7 @@ function openPopUp(element) {
                                     width="25px">
                             </div>
                             <div>
-                                <button class="closebutton" type="submit" onclick="updatenote(this)" >Close</button>
+                                <button id="closebutton" name="${element.value}"  type="submit" onclick="updatenote(this)" >Close</button>
                             </div>
                         </div>
                   </div>`)
@@ -200,13 +200,16 @@ function openPopUp(element) {
   });
   document.getElementById("text").value = element.id
   document.getElementById("desctext").value = element.title
+  
 }
 
 function updatenote(element) {
-  console.log(element.id, element.title);
-  var title = element.id;
-  var desc = element.title;
-  var id = $(element).attr('id')
+  var title = document.getElementById("text").value;
+  var desc = document.getElementById("desctext").value;
+  console.log(title);
+  console.log(desc);
+  var id = element.name
+  console.log(id);
   let updateObj = {
     noteId: [id],
     title: title,
@@ -261,6 +264,9 @@ function gettrashnote(){
   window.location.href = "/templates/trash.html"
 }
 
+function getnotelist(){
+  window.location.href = "/templates/dashboard/dashboard.html"
+}
 $(function () {
   $('#title').hide();
   $('.iconslist').hide();
@@ -271,7 +277,9 @@ $(function () {
     $('.iconslist').show();
     $('#description').show();
     $('#iconstitle').hide();
+    
   })
+  var nav=document.getElementsByClassName("createnote")
   $('#closebutton').on('click', function () {
     $('#title').hide();
     $('.iconslist').hide();

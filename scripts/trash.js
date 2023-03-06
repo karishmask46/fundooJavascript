@@ -36,3 +36,14 @@ $(function(){
         }
       });
     })
+    function getarchivenotes() {
+      window.location.href = "/templates/archivenotes.html"
+    }
+    
+    
+    function gettrashnote(){
+      window.location.href = "/templates/trash.html"
+    }
+    function getnotelist(){
+      window.location.href = "/templates/dashboard/dashboard.html"
+    }
