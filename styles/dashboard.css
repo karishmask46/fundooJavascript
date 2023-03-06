@@ -152,27 +152,30 @@
     height: 100vh;
     width: 100vw;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
 }
 
 .centerportion {
-    height: 500px;
-    width: 759px;
+    height: auto;
+    width: 78vw;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
-
+.totalcreatediv{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .createnote {
-    height: 120px;
+    height: 40px;
     width: 600px;
     border: 1px solid gainsboro;
     margin: 40px;
     box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
     border-radius: 5px;
-    position: relative;
-    left: 200px;
 }
 
 .iconsoftitile {
@@ -180,6 +183,7 @@
     width: 96%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -214,6 +218,12 @@
     position: relative;
     right: 20px;
 }
+.close{
+    border: none;
+    background: none;
+    position: relative;
+    right: 20px;
+}
 
 .iconslist {
     height: 45px;
@@ -231,16 +241,28 @@
     align-items: center;
     justify-content: space-around;
 }
-
+.uppergetnote{
+    height: auto;
+    width: 100%;
+    margin: 0px;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin-left: 0%;
+    margin-right: 5%;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
 .getnote {
+    height: auto;
+    width: auto;
     flex-direction: row;
     box-sizing: border-box;
     display: flex;
     margin-left: 5%;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     cursor: pointer;
-    z-index: 1;
-
 }
 
 #someId {
@@ -248,7 +270,7 @@
 }
 
 .listnotes {
-    width: 250px;
+    width: 219px;
     max-height: 130px;
     margin: 15px auto 16px auto;
     border: 1px solid rgb(186, 184, 184);
@@ -396,7 +418,7 @@
     height: 45px;
     width: 45px;
     display: flex;
-    background:violet;
+    /* background:violet; */
     flex-flow: row wrap;
     border-radius: 120px;
     justify-content: space-between;
@@ -406,7 +428,7 @@
     height: 45px;
     width: 45px;
     display: flex;
-    background: rgba(76, 0, 130, 0.281);
+    /* background: rgba(76, 0, 130, 0.281); */
     flex-flow: row wrap;
     border-radius: 120px;
     justify-content: space-between;
@@ -416,7 +438,7 @@
     height: 45px;
     width: 45px;
     display: flex;
-    background:rgba(0, 234, 255, 0.347);
+    /* background:rgba(0, 234, 255, 0.347); */
     flex-flow: row wrap;
     border-radius: 120px;
     justify-content: space-between;
@@ -426,7 +448,7 @@
     height: 45px;
     width: 45px;
     display: flex;
-    background: rgba(0, 128, 0, 0.265);
+    /* background: rgba(0, 128, 0, 0.265); */
     flex-flow: row wrap;
     border-radius: 120px;
     justify-content: space-between;
@@ -436,7 +458,7 @@
     height: 45px;
     width: 45px;
     display: flex;
-    background: rgba(255, 255, 0, 0.315);
+    /* background: rgba(255, 255, 0, 0.315); */
     flex-flow: row wrap;
     border-radius: 120px;
     justify-content: space-between;
@@ -446,7 +468,7 @@
     height: 45px;
     width: 45px;
     display: flex;
-    background:rgba(255, 166, 0, 0.276);
+    /* background:rgba(255, 166, 0, 0.276); */
     flex-flow: row wrap;
     border-radius: 120px;
     justify-content: space-between;
@@ -456,7 +478,7 @@
     height: 45px;
     width: 45px;
     display: flex;
-    background: rgba(255, 25, 0, 0.201);
+    /* background: rgba(255, 25, 0, 0.201); */
     flex-flow: row wrap;
     border-radius: 120px;
     justify-content: space-between;
@@ -466,7 +488,7 @@
     height: 45px;
     width: 45px;
     display: flex;
-    background: pink;
+    /* background: pink; */
     flex-flow: row wrap;
     border-radius: 120px;
     justify-content: space-between;
@@ -476,7 +498,7 @@
     height: 45px;
     width: 45px;
     display: flex;
-    background: white;
+    /* background: white; */
     flex-flow: row wrap;
     border-radius: 120px;
     justify-content: space-between;

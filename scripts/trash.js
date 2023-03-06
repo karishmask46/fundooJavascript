@@ -9,7 +9,7 @@ $(function(){
           var achivearray=response.data.data
           console.log(achivearray);
           achivearray.forEach(function (item) {
-            $('.getnote').append(`<div class="listnotes">
+            $('.getnote').append(`<div class="listnotes" style="background-color:${item.color} ;">
               <div class= "titlediv">
                   <div class="pushpindiv">
                       <p class="gettitle" >`+ item.title + `</p>
@@ -46,4 +46,18 @@ $(function(){
     }
     function getnotelist(){
       window.location.href = "/templates/dashboard/dashboard.html"
+    }
+    function toggleNav() {
+      var nav = document.getElementById("side");
+      var container=document.getElementById("centerpart")
+      var center=document.getElementById("uppergetid")
+      if (nav.style.width === "250px") {
+        nav.style.width = "0";
+        container.style.width="100vw"
+        center.style.width="100vw"
+      } else {
+        nav.style.width = "250px";
+        container.style.width="78vw"
+        center.style.width="100%"
+      }
     }

@@ -14,17 +14,20 @@ $(function () {
         console.log(data);
         $("#title").val("");
         $("#description").val("");
+        window.location.reload();
       },
       error: function (error) {
         console.error(error);
       }
     });
+   
   });
 });
 
 
 var arrayData = [];
 $(function () {
+  colorarray=["Red","White","yellow","Green"]
   $.ajax({
     type: "GET",
     url: "http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList",
@@ -38,17 +41,16 @@ $(function () {
       })
       console.log(arrayData);
       arrayData.forEach(function (item) {
-        $('.getnote').append(`<div class="listnotes">
+        $('.getnote').append(`<div class="listnotes" style="background-color:${item.color} ;">
           <div class= "titlediv" id="${item.title}" title="${item.description}" value="${item.id}" onclick="openPopUp(this)" >
               <div class="pushpindiv">
-                  <p class="gettitle" >`+ item.title + `</p>
-                  <dialog id="myDialog">This is an open dialog window</dialog>
+                  <p class="gettitle" id="titleId">`+ item.title + `</p>
 
                   <img id="pushpin" src="/assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
                       width="25px">
               </div>
               <div id="desc">
-                  <p class="getdescription">`+ item.description + `</p>
+                  <p class="getdescription" id="descId">`+ item.description + `</p>
               </div>
           </div >
           <div class="iconslist1">
@@ -62,16 +64,15 @@ $(function () {
                           <img id="colorpallete" src="/assets/palette_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
                           width="25px">
                           <div class="dropdown-content1">
-                            <a href="#" class="list1" id="${item.id}" onclick="colorapi(this)" ></a>
-                            <a href="#" class="list2" id="${item.id}" onclick="colorapi(this)"></a>
-                            <a href="#" class="list3" id="${item.id}" onclick="colorapi(this)"></a>
-                            <a href="#" class="list4" id="${item.id}" onclick="colorapi(this)"></a>
-                            <a href="#" class="list5" id="${item.id}" onclick="colorapi(this)"></a>
-                            <a href="#" class="list6" id="${item.id}" onclick="colorapi(this)"></a>
-                            <a href="#" class="list7" id="${item.id}" onclick="colorapi(this)"></a>
-                            <a href="#" class="list8" id="${item.id}" onclick="colorapi(this)"></a>
-                            <a href="#" class="list9" id="${item.id}" onclick="colorapi(this)"></a>
-
+                            <a href="#" class="list1" style="background-color:#fff475 ;" id="${item.id}" title="${'#fff475'}" onclick="colorapi(this)" ></a>
+                            <a href="#" class="list2" style="background-color:#ccff90 ;" id="${item.id}" title="${'#ccff90'}" onclick="colorapi(this)"></a>
+                            <a href="#" class="list3" style="background-color:#a7ffeb ;" id="${item.id}" title="${'#a7ffeb'}" onclick="colorapi(this)"></a>
+                            <a href="#" class="list4" style="background-color:#cbf0f8 ;" id="${item.id}" title="${'#cbf0f8'}" onclick="colorapi(this)"></a>
+                            <a href="#" class="list5" style="background-color:#aecbfa ;" id="${item.id}" title="${'#aecbfa'}" onclick="colorapi(this)"></a>
+                            <a href="#" class="list6" style="background-color:#d7aefb ;" id="${item.id}" title="${'#d7aefb'}" onclick="colorapi(this)"></a>
+                            <a href="#" class="list7" style="background-color:e8eaed ;" id="${item.id}" title="${'e8eaed'}" onclick="colorapi(this)"></a>
+                            <a href="#" class="list8" style="background-color:#fdcfe8;" id="${item.id}" title="${'#fdcfe8'}" onclick="colorapi(this)"></a>
+                            <a href="#" class="list9" style="background-color:#e6c9a8 ;" id="${item.id}" title="${'#e6c9a8'}" onclick="colorapi(this)"></a>
                           </div>
                         </div> 
 
@@ -96,7 +97,6 @@ $(function () {
                     </div>`)
                    
       })
-      
     },
     error: function (error) {
       console.error(error);
@@ -121,6 +121,7 @@ function setArchive(noteitem) {
     headers: { "Authorization": localStorage.getItem('token') },
     success: function (data) {
       console.log(data);
+      window.location.reload();
     },
     error: function (error) {
       console.error(error);
@@ -144,6 +145,7 @@ function deletenote(deleteparam) {
     headers: { "Authorization": localStorage.getItem('token') },
     success: function (data) {
       console.log(data);
+      window.location.reload();
     },
     error: function (error) {
       console.error(error);
@@ -158,6 +160,9 @@ function deletenote(deleteparam) {
 
 
 function openPopUp(element) {
+  console.log(element);
+  var id=$(element).attr('value')
+  console.log(id);
   $("#methods").dialog({
     modal: true,
     draggable: true,
@@ -178,8 +183,22 @@ function openPopUp(element) {
                                 <img src="/assets/person_add_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
                                     width="25px">
 
-                                <img src="/assets/palette_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                                    <div class="dropdown1" >
+                                    <img id="colorpallete" src="/assets/palette_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
                                     width="25px">
+                                    <div class="dropdown-content1">
+                                      <a href="#" class="list1" style="background-color:#fff475 ;" id="${id}" title="${'#fff475'}" onclick="colorapi(this)" ></a>
+                                      <a href="#" class="list2" style="background-color:#ccff90 ;" id="${id}" title="${'#ccff90'}" onclick="colorapi(this)"></a>
+                                      <a href="#" class="list3" style="background-color:#a7ffeb ;" id="${id}" title="${'#a7ffeb'}" onclick="colorapi(this)"></a>
+                                      <a href="#" class="list4" style="background-color:#cbf0f8 ;" id="${id}" title="${'#cbf0f8'}" onclick="colorapi(this)"></a>
+                                      <a href="#" class="list5" style="background-color:#aecbfa ;" id="${id}" title="${'#aecbfa'}" onclick="colorapi(this)"></a>
+                                      <a href="#" class="list6" style="background-color:#d7aefb ;" id="${id}" title="${'#d7aefb'}" onclick="colorapi(this)"></a>
+                                      <a href="#" class="list7" style="background-color:e8eaed ;" id="${id}" title="${'e8eaed'}" onclick="colorapi(this)"></a>
+                                      <a href="#" class="list8" style="background-color:#fdcfe8;" id="${id}" title="${'#fdcfe8'}" onclick="colorapi(this)"></a>
+                                      <a href="#" class="list9" style="background-color:#e6c9a8 ;" id="${id}" title="${'#e6c9a8'}" onclick="colorapi(this)"></a>
+                                    </div>
+                                  </div> 
+          
 
                                 <img src="/assets/image_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
                                     width="25px">
@@ -190,13 +209,12 @@ function openPopUp(element) {
                                     width="25px">
                             </div>
                             <div>
-                                <button id="closebutton" name="${element.value}"  type="submit" onclick="updatenote(this)" >Close</button>
+                                <button class="close" id="${id}"  type="submit" onclick="updatenote(this)" >Close</button>
                             </div>
                         </div>
                   </div>`)
 
     }
-
   });
   document.getElementById("text").value = element.id
   document.getElementById("desctext").value = element.title
@@ -208,13 +226,14 @@ function updatenote(element) {
   var desc = document.getElementById("desctext").value;
   console.log(title);
   console.log(desc);
-  var id = element.name
+  var id = $(element).attr('id')
   console.log(id);
   let updateObj = {
-    noteId: [id],
+    noteId: id,
     title: title,
     description: desc,
   }
+console.log(updateObj);
   $.ajax({
     type: "POST",
     url: "http://fundoonotes.incubation.bridgelabz.com/api/notes/updateNotes",
@@ -228,17 +247,15 @@ function updatenote(element) {
       console.error(error);
     }
   });
+  document.getElementById("titleId").value=title
+  document.getElementById("descId").value=desc
 }
 
-
-
 function colorapi(noteitem) {
-  console.log(noteitem.style);
-  let colour = [noteitem.style.backgroundColor, 'yellow']
-  let noteid = $(noteitem).attr('id')
+  console.log(noteitem.id,noteitem.title);
   let colorObj = {
-    noteIdList: [noteid],
-    color: colour
+    noteIdList: [noteitem.id],
+    color: noteitem.title
   }
   $.ajax({
     type: "POST",
@@ -248,6 +265,8 @@ function colorapi(noteitem) {
     headers: { "Authorization": localStorage.getItem('token') },
     success: function (data) {
       console.log(data);
+      window.location.reload();
+      // $(".listnotes").css("background-color",`${noteitem.title}`)
     },
     error: function (error) {
       console.error(error);
@@ -277,21 +296,28 @@ $(function () {
     $('.iconslist').show();
     $('#description').show();
     $('#iconstitle').hide();
-    
+    $(".createnote").css("height","120px")
   })
-  var nav=document.getElementsByClassName("createnote")
+ 
   $('#closebutton').on('click', function () {
     $('#title').hide();
     $('.iconslist').hide();
     $('#description').show();
     $('#iconstitle').show();
+    $(".createnote").css("height","40px")
   })
 });
 function toggleNav() {
   var nav = document.getElementById("side");
+  var container=document.getElementById("centerpart")
+  var center=document.getElementById("uppergetid")
   if (nav.style.width === "250px") {
     nav.style.width = "0";
+    container.style.width="100vw"
+    center.style.width="100vw"
   } else {
     nav.style.width = "250px";
+    container.style.width="78vw"
+    center.style.width="100%"
   }
 }
