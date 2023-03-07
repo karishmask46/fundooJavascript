@@ -1,15 +1,15 @@
-$(function(){
-    $.ajax({
-        type: "GET",
-        url: "http://fundoonotes.incubation.bridgelabz.com/api/notes/getTrashNotesList",
-        contentType: 'application/json',
-        headers: { "Authorization": localStorage.getItem('token') },
-        success: function (response) {
-          console.log(response);
-          var achivearray=response.data.data
-          console.log(achivearray);
-          achivearray.forEach(function (item) {
-            $('.getnote').append(`<div class="listnotes" style="background-color:${item.color} ;">
+$(function () {
+  $.ajax({
+    type: "GET",
+    url: "http://fundoonotes.incubation.bridgelabz.com/api/notes/getTrashNotesList",
+    contentType: 'application/json',
+    headers: { "Authorization": localStorage.getItem('token') },
+    success: function (response) {
+      console.log(response);
+      var achivearray = response.data.data
+      console.log(achivearray);
+      achivearray.forEach(function (item) {
+        $('.getnote').append(`<div class="listnotes" style="background-color:${item.color} ;">
               <div class= "titlediv">
                   <div class="pushpindiv">
                       <p class="gettitle" >`+ item.title + `</p>
@@ -22,42 +22,97 @@ $(function(){
               </div >
               <div class="iconslist1">
                 <div class="listicons1">
-                  <img src="../assets/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                  <img src="../assets/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg" alt=" " id="${item.id}" onclick="restore(this)" height="25px"
                     width="25px">
-                    <img src="../assets/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
+                    <img src="../assets/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="" id="${item.id}" onclick="deleteForever(this)"  height="25px"
                       width="25px">
                             </div>
                           </div>
                         </div>`)
-          })
-        },
-        error: function (error) {
-          console.error(error);
-        }
-      });
-    })
-    function getarchivenotes() {
-      window.location.href = "/templates/archivenotes.html"
+      })
+    },
+    error: function (error) {
+      console.error(error);
     }
-    
-    
-    function gettrashnote(){
-      window.location.href = "/templates/trash.html"
+  });
+})
+  
+
+function restore(noteid){
+  var id=$(noteid).attr('id')
+  console.log(id);
+  let restoreobj={
+    noteIdList: [id],
+    isDeleted: false,
+  }
+  $.ajax({
+    type: "POST",
+    url: "http://fundoonotes.incubation.bridgelabz.com/api/notes/trashNotes",
+    data:JSON.stringify(restoreobj),
+    contentType: 'application/json',
+    headers: { "Authorization": localStorage.getItem('token') },
+    success: function (data) {
+      console.log(data);
+      window.location.reload();
+    },
+    error: function (error) {
+      console.error(error);
     }
-    function getnotelist(){
-      window.location.href = "/templates/dashboard/dashboard.html"
+  });
+ 
+}
+
+
+
+
+function deleteForever(noteid){
+  var id=$(noteid).attr('id')
+  console.log(id);
+  let restoreobj={
+    noteIdList: [id],
+    isDeleted: true,
+  }
+  $.ajax({
+    type: "POST",
+    url: "http://fundoonotes.incubation.bridgelabz.com/api/notes/deleteForeverNotes",
+    data:JSON.stringify(restoreobj),
+    contentType: 'application/json',
+    headers: { "Authorization": localStorage.getItem('token') },
+    success: function (data) {
+      console.log(data);
+      window.location.reload();
+    },
+    error: function (error) {
+      console.error(error);
     }
-    function toggleNav() {
-      var nav = document.getElementById("side");
-      var container=document.getElementById("centerpart")
-      var center=document.getElementById("uppergetid")
-      if (nav.style.width === "250px") {
-        nav.style.width = "0";
-        container.style.width="100vw"
-        center.style.width="100vw"
-      } else {
-        nav.style.width = "250px";
-        container.style.width="78vw"
-        center.style.width="100%"
-      }
-    }
+  });
+ 
+}
+
+
+
+function getarchivenotes() {
+  window.location.href = "/templates/archivenotes.html"
+}
+
+
+function gettrashnote() {
+  window.location.href = "/templates/trash.html"
+}
+function getnotelist() {
+  window.location.href = "/templates/dashboard/dashboard.html"
+}
+function toggleNav() {
+  var nav = document.getElementById("side");
+  var container = document.getElementById("centerpart")
+  var center = document.getElementById("uppergetid")
+  if (nav.style.width === "250px") {
+    nav.style.width = "0";
+    container.style.width = "100vw"
+    center.style.width = "100vw"
+  } else {
+    nav.style.width = "250px";
+    container.style.width = "78vw"
+    center.style.width = "100%"
+  }
+}

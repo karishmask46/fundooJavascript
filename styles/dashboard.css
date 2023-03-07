@@ -115,11 +115,16 @@
     align-items: center;
     justify-content: space-around;
 }
-
-.sidenavicons:hover {
+.sidenavicons:hover{
+    background-color: rgba(0, 0, 0, 0.039);
+    border-radius: 0px 20px 20px 0px;
+  }
+  
+  .sidenavicons:focus, .sidenavicons:active{
     background-color: #feefc3;
     border-radius: 0px 20px 20px 0px;
-}
+  }
+
 
 #sidenavelabel {
     height: 40px;
@@ -233,7 +238,21 @@
     align-items: center;
     justify-content: space-between;
 }
-
+.iconslistupdate {
+    height: 35px;
+    width: 550px;
+    border: 0px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.listiconsupdate {
+    height: 35px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .listicons {
     height: 45px;
     width: 60%;
@@ -249,6 +268,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     margin-left: 0%;
     margin-right: 5%;
     flex-wrap: wrap;
@@ -275,7 +295,7 @@
     margin: 15px auto 16px auto;
     border: 1px solid rgb(186, 184, 184);
     padding: 8px;
-    border-radius: 8px;
+    border-radius: 7px;
     box-sizing: border-box;
 }
 
@@ -561,6 +581,17 @@
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
+}
+.update{
+    display: flex;
+    flex-direction: column;
+}
+.inputfileds{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 .updatetitle{
 outline: none;

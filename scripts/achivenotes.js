@@ -46,7 +46,7 @@ $.ajax({
 
                     <img src="/assets/image_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px" width="25px">
                         <div>
-                      <img  src="../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg" alt=""  height="25px" width="25px">
+                      <img  src="../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg" id="${item.id}" onclick="unArchive(this)" alt=""  height="25px" width="25px">
                        </div>
                           <div class="dropdown">
                           <img class="morebutton"  src="/assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
@@ -70,6 +70,41 @@ $.ajax({
     }
   });
 })
+
+
+function unArchive(noteid){
+  var id=$(noteid).attr('id')
+  console.log(id);
+  let restoreobj={
+    noteIdList: [id],
+    isArchived: false,
+  }
+  $.ajax({
+    type: "POST",
+    url: "http://fundoonotes.incubation.bridgelabz.com/api/notes/archiveNotes",
+    data:JSON.stringify(restoreobj),
+    contentType: 'application/json',
+    headers: { "Authorization": localStorage.getItem('token') },
+    success: function (data) {
+      console.log(data);
+      window.location.reload();
+    },
+    error: function (error) {
+      console.error(error);
+    }
+  });
+ 
+}
+
+
+
+
+
+
+
+
+
+
 function getarchivenotes() {
   window.location.href = "/templates/archivenotes.html"
 }

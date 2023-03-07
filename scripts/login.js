@@ -13,6 +13,7 @@ $(function () {
         console.log(data);
         localStorage.setItem('token', (data.id))
         alert("sigin successfull.");
+        window.location.href="/templates/dashboard/dashboard.html"
       },
       error: function (error) {
         console.error(error);
@@ -23,4 +24,6 @@ $(function () {
     
   });
 });
-
+function createaccount(){
+  window.location.href="/templates/Registration/register.html"
+}

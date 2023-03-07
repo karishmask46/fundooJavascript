@@ -34,3 +34,6 @@ $(function () {
     }
   });
 });
+function signin(){
+  window.location.href="/templates/login/login.html"
+}

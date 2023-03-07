@@ -116,10 +116,15 @@
     justify-content: space-around;
 }
 
-.sidenavicons:hover {
+.sidenavicons:hover{
+    background-color: rgba(0, 0, 0, 0.037);
+    border-radius: 0px 20px 20px 0px;
+  }
+  
+  .sidenavicons:focus, .sidenavicons:active{
     background-color: #feefc3;
     border-radius: 0px 20px 20px 0px;
-}
+  }
 
 #sidenavelabel {
     height: 40px;
@@ -161,21 +166,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-}
-.totalcreatediv{
-    height: auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.createnote {
-    height: 40px;
-    width: 600px;
-    border: 1px solid gainsboro;
-    margin: 40px;
-    box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
-    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .iconsoftitile {
@@ -249,9 +240,11 @@
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     margin-left: 0%;
     margin-right: 5%;
-    flex-wrap: wrap;
+   flex-flow: row wrap;
+   flex-grow: unset;
     cursor: pointer;
 }
 .getnote {
@@ -311,7 +304,7 @@
     border: 0px solid red;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-betwee;
 }
 
 .listicons1 {
@@ -319,7 +312,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 #pushpin {
