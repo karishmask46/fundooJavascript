@@ -652,7 +652,7 @@ font-size: 15px;
 }
 .createdlabel{
     height: auto;
-    width: 260px;
+    width: auto;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between;
@@ -662,10 +662,15 @@ font-size: 15px;
 }
 .updatedlabel{
     height: auto;
-    width: 260px;
+    width: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
 }
+/* #editlabel{
+    height: 500px;
+    width: 350px;
+    border: 1px solid red;
+} */

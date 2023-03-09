@@ -1,6 +1,6 @@
 var arrayData = [];
 var filterArray = [];
-var labeltext=[];
+var labeltext = [];
 
 
 $(function () {
@@ -47,7 +47,7 @@ $(function () {
 
       console.log(arrayData);
       arrayData.forEach(function (item) {
-        localStorage.setItem('userid',item.userId)
+        localStorage.setItem('userid', item.userId)
         $('.getnote').append(`<div class="listnotes" style="background-color:${item.color} ;">
           <div class= "titlediv" id="${item.title}" title="${item.description}" value="${item.id}"  style="background-color:${item.color} ;" onclick="openPopUp(this)" >
               <div class="pushpindiv">
@@ -351,9 +351,9 @@ function colorapi(noteitem) {
 function editlabel() {
   $("#editlabel").dialog({
     maxWidth: 300,
-    maxHeight: 170,
+    maxHeight: 300,
     width: 300,
-    height: 170,
+    height: 300,
     modal: true,
     draggable: true,
     resizable: true,
@@ -367,23 +367,11 @@ function editlabel() {
         $(".buttondone").empty("");
         $(".createdlabel").empty("");
       })
-      $(".ui-dialog-titlebar").append(`<div class="titleeditlabel"><p>Edit Labels</>
-
-      </div>`)
-      $(".ui-dialog-content").append(`<div class="contenteditlabel">
-      <img src="/assets/close_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="close">
-      <input id="inputeditlabel" type="text" placeholder="Create new label">
-      
-      <img src="/assets/done_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="done">
-      </div>
-     <div class="createdlabel">
-     </div>
-      <div><button class="buttondone">Done</button></div>`)
     }
   })
   $(".done").on("click", function () {
     var inputtext = $("#inputeditlabel").val();
-    var userid=localStorage.getItem('userid')
+    var userid = localStorage.getItem('userid')
     console.log(inputtext);
     let editObj = {
       "label": inputtext,
@@ -399,6 +387,7 @@ function editlabel() {
       headers: { "Authorization": localStorage.getItem('token') },
       success: function (data) {
         console.log(data);
+        window.location.reload();
       },
       error: function (error) {
         console.error(error);
@@ -409,7 +398,7 @@ function editlabel() {
 
 }
 
-$(function(){
+$(function () {
   $.ajax({
     type: "GET",
     url: "http://fundoonotes.incubation.bridgelabz.com/api/noteLabels/getNoteLabelList",
@@ -417,22 +406,69 @@ $(function(){
     headers: { "Authorization": localStorage.getItem('token') },
     success: function (data) {
       console.log(data);
-      labeltext=data.data.details
+      labeltext = data.data.details
       console.log(labeltext);
+
       $.each(labeltext, function (key, value) {
         $(".sidenav").append(`<div class="sidenavicons" id="sidenavicon" tabindex=3>
         <img id="sidenavimg3" src="/assets/label_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
             alt="">
-        <label id="sidenavelabel" for="">`+value.label+`</label>
+        <label id="sidenavelabel" for="">`+ value.label + `</label>
     </div>`)
+        $("#getlabellist").append(`<div class="updatedlabel"><img src="/assets/delete_FILL0_wght400_GRAD0_opsz48.svg" id="${value.id}" onclick="deleteLabel(this)"  alt="" height="20px"
+    width="20px"> <input type="text" class="postedlabel" id="postlabel" value="${value.label}"> <img src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" id="${value.id}"  alt="" onclick="updateLabel(this)" height="20px"
+    width="20px"></div>`)
       })
+    },
+    error: function (error) {
+      console.error(error);
+    },
+
+  });
+});
+
+function deleteLabel(deleteId) {
+  var id = $(deleteId).attr('id')
+  $.ajax({
+    type: "DELETE",
+    url: `http://fundoonotes.incubation.bridgelabz.com/api/noteLabels/${id}/deleteNoteLabel`,
+    contentType: 'application/json',
+    headers: { "Authorization": localStorage.getItem('token') },
+    success: function (data) {
+      console.log(data);
+      window.location.reload();
     },
     error: function (error) {
       console.error(error);
     }
   });
-});
-
+}
+function updateLabel(updateID){
+ var labelId=$(updateID).attr('id');
+ var newLabel=$("#postlabel").val();
+ var id= localStorage.getItem('userid')
+  let updateLabelObj={
+    "label": newLabel,
+    "isDeleted": false,
+    "id":labelId ,
+    "userId": id
+  }
+  $.ajax({
+    type: "POST",
+    url: `http://fundoonotes.incubation.bridgelabz.com/api/noteLabels/${labelId}/updateNoteLabel`,
+    data: JSON.stringify(updateLabelObj),
+    contentType: 'application/json',
+    headers: { "Authorization": localStorage.getItem('token') },
+    success: function (data) {
+      console.log(data);
+      window.location.reload();
+    },
+    error: function (error) {
+      console.error(error);
+    }
+  });
+  
+}
 function getarchivenotes() {
   window.location.href = "/templates/archivenotes.html"
 }

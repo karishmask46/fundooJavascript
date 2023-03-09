@@ -56,11 +56,6 @@
                         width="30px" alt="">
                     <label id="sidenavelabel" for="">Remainder</label>
                 </div>
-                <div class="sidenavicons" id="sidenavicon" tabindex=3>
-                    <img id="sidenavimg3" src="/assets/label_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
-                        alt="">
-                    <label id="sidenavelabel" for="">Sign</label>
-                </div>
                 <div class="sidenavicons" id="sidenavicon" tabindex=4 onclick="editlabel()">
                     <img id="sidenavimg4" src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
                         alt="">
@@ -138,7 +133,21 @@
     </div>
     <div id="methods" style="display: none;">
     </div>
-    <div id="editlabel" style="display: none;" ></div>  
+    <div id="editlabel" style="display: none;" >
+        <div class="titleeditlabel">
+            <p>Edit Labels</p>
+        </div>
+        <div class="contenteditlabel">
+            <img src="/assets/close_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="close">
+            <input id="inputeditlabel" type="text" placeholder="Create new label">
+            
+            <img id="Donebutton" src="/assets/done_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="done">
+            </div>
+           <div class="createdlabel" id="getlabellist">
+           </div>
+            <div><button class="buttondone">Done</button></div>
+    </div>  
+  
 </body>
 
 </html>
