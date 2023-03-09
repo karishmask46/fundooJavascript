@@ -32,7 +32,10 @@
                             width="25px">
                     </div>
                     <img src="/assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
-                    <img src="/assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+                    <div>
+                    <img id="listview" class="gridview" src="/assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg"  height="25px" width="25px" alt="">
+               <img id="grid" class="gridclass" style="display: none;"  src="/assets/grid_view_FILL0_wght400_GRAD0_opsz48.svg"  height="25px" width="25px"  alt="">
+            </div>
                     <img src="/assets/settings_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
                 </div>
                 <div class="account">
@@ -43,7 +46,7 @@
         </header>
         <div class="container">
             <div class="sidenav" id="side">
-                <div class="sidenavicons" id="sidenavicon" onclick="getnotelist()" tabindex=1 >
+                <div class="sidenavicons" id="sidenavicon"  tabindex=1 >
                     <img id="sidenavimg1" src="/assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg"  height="30px"
                         width="30px" alt="">
                     <label id="sidenavelabel" for="">Notes</label>
@@ -58,7 +61,7 @@
                         alt="">
                     <label id="sidenavelabel" for="">Sign</label>
                 </div>
-                <div class="sidenavicons" id="sidenavicon" tabindex=4>
+                <div class="sidenavicons" id="sidenavicon" tabindex=4 onclick="editlabel()">
                     <img id="sidenavimg4" src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
                         alt="">
                     <label id="sidenavelabel" for="">Edit labels</label>
@@ -134,8 +137,8 @@
 
     </div>
     <div id="methods" style="display: none;">
-        <p id="updatetitle"></p>
     </div>
+    <div id="editlabel" style="display: none;" ></div>  
 </body>
 
 </html>

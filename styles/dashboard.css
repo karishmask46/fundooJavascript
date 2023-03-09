@@ -298,7 +298,10 @@
     border-radius: 7px;
     box-sizing: border-box;
 }
-
+.listnotes.foo {
+    width: 500px;
+  }
+  
 .titlediv {
     height: 75px;
     width: 100%;
@@ -609,4 +612,60 @@ background: none;
 position: relative;
 bottom: 20px;
 font-size: 15px;
+}
+.contenteditlabel{
+    display: flex;
+    flex-direction: row;
+}
+#inputeditlabel{
+    border: none;
+    outline: none;
+    border-bottom:1px solid gainsboro;
+}
+.done{
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left: 20px;
+}
+.close{
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left: 5px;
+}
+.buttondone{
+    background: none;
+    border: none;
+    position: relative;
+    top: 10px;
+    left: 220px;
+}
+.postedlabel{
+    border: none;
+    outline: none;
+    border-bottom:1px solid gainsboro;
+}
+.line{
+    border-top: gainsboro;
+    width: 250px;
+}
+.createdlabel{
+    height: auto;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between;
+    align-items: center; */
+    border: 0px solid red;
+    border-bottom:1px solid gainsboro;
+}
+.updatedlabel{
+    height: auto;
+    width: 260px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
 }

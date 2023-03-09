@@ -1,6 +1,6 @@
 var arrayData = [];
 var filterArray = [];
-
+var labeltext=[];
 
 
 $(function () {
@@ -44,8 +44,10 @@ $(function () {
       arrayData = arrayData.filter((k) => {
         return k.isArchived == false && k.isDeleted == false;
       })
+
       console.log(arrayData);
-       arrayData.forEach(function (item) {
+      arrayData.forEach(function (item) {
+        localStorage.setItem('userid',item.userId)
         $('.getnote').append(`<div class="listnotes" style="background-color:${item.color} ;">
           <div class= "titlediv" id="${item.title}" title="${item.description}" value="${item.id}"  style="background-color:${item.color} ;" onclick="openPopUp(this)" >
               <div class="pushpindiv">
@@ -101,18 +103,18 @@ $(function () {
                       </div>
                     </div>`)
       })
-      $('#searchid').on("keyup",function() {
+      $('#searchid').on("keyup", function () {
         var query = $('#searchid').val();
         // arrayData = arrayData.filter((k) => {
         //   return k.isArchived == false && k.isDeleted == false;
         // })
         console.log(query);
-        var filteredNotes = filterArray.filter(function(note) {
-          return note.title.indexOf(query) > -1 || note.description.indexOf(query) > -1 
+        var filteredNotes = filterArray.filter(function (note) {
+          return note.title.indexOf(query) > -1 || note.description.indexOf(query) > -1
         });
         console.log(filteredNotes);
         $('.getnote').empty();
-        $.each(filteredNotes, function(key, value) {
+        $.each(filteredNotes, function (key, value) {
           $('.getnote').append(`<div class="listnotes" style="background-color:${value.color} ;">
           <div class= "titlediv" id="${value.title}" title="${value.description}" value="${value.id}"  style="background-color:${value.color} ;" onclick="openPopUp(this)" >
               <div class="pushpindiv">
@@ -169,7 +171,7 @@ $(function () {
                     </div>`);
 
         });
-       
+
       });
     },
     error: function (error) {
@@ -346,6 +348,91 @@ function colorapi(noteitem) {
   });
 }
 
+function editlabel() {
+  $("#editlabel").dialog({
+    maxWidth: 300,
+    maxHeight: 170,
+    width: 300,
+    height: 170,
+    modal: true,
+    draggable: true,
+    resizable: true,
+    closeOnEscape: false,
+    open: function () {
+      $(".ui-widget-overlay").on("click", function () {
+        $("#editlabel").dialog('close');
+        $(".ui-dialog-titlebar").empty("");
+        $(".titleeditlabel").empty("");
+        $(".contenteditlabel").empty("");
+        $(".buttondone").empty("");
+        $(".createdlabel").empty("");
+      })
+      $(".ui-dialog-titlebar").append(`<div class="titleeditlabel"><p>Edit Labels</>
+
+      </div>`)
+      $(".ui-dialog-content").append(`<div class="contenteditlabel">
+      <img src="/assets/close_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="close">
+      <input id="inputeditlabel" type="text" placeholder="Create new label">
+      
+      <img src="/assets/done_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="done">
+      </div>
+     <div class="createdlabel">
+     </div>
+      <div><button class="buttondone">Done</button></div>`)
+    }
+  })
+  $(".done").on("click", function () {
+    var inputtext = $("#inputeditlabel").val();
+    var userid=localStorage.getItem('userid')
+    console.log(inputtext);
+    let editObj = {
+      "label": inputtext,
+      "isDeleted": false,
+      "userId": userid,
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "http://fundoonotes.incubation.bridgelabz.com/api/noteLabels",
+      data: JSON.stringify(editObj),
+      contentType: 'application/json',
+      headers: { "Authorization": localStorage.getItem('token') },
+      success: function (data) {
+        console.log(data);
+      },
+      error: function (error) {
+        console.error(error);
+      }
+
+    });
+  })
+
+}
+
+$(function(){
+  $.ajax({
+    type: "GET",
+    url: "http://fundoonotes.incubation.bridgelabz.com/api/noteLabels/getNoteLabelList",
+    contentType: 'application/json',
+    headers: { "Authorization": localStorage.getItem('token') },
+    success: function (data) {
+      console.log(data);
+      labeltext=data.data.details
+      console.log(labeltext);
+      $.each(labeltext, function (key, value) {
+        $(".sidenav").append(`<div class="sidenavicons" id="sidenavicon" tabindex=3>
+        <img id="sidenavimg3" src="/assets/label_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
+            alt="">
+        <label id="sidenavelabel" for="">`+value.label+`</label>
+    </div>`)
+      })
+    },
+    error: function (error) {
+      console.error(error);
+    }
+  });
+});
+
 function getarchivenotes() {
   window.location.href = "/templates/archivenotes.html"
 }
@@ -397,3 +484,9 @@ function logout() {
   localStorage.removeItem('token')
   window.location.href = "/templates/login/login.html"
 }
+$(function () {
+  $('#listview').on('click', e => {
+    $('.listnotes').toggleClass('foo');
+  });
+})
+
