@@ -125,7 +125,24 @@
     border-radius: 0px 20px 20px 0px;
   }
 
-
+.sidenavlabel{
+    height: auto;
+    width: 250px;
+    border: 0px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.sidenaviconslbel{
+    height: 40px;
+    width: 250px;
+    border: 0px solid red;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
 #sidenavelabel {
     height: 40px;
     width: 150px;
@@ -615,36 +632,24 @@ font-size: 15px;
 }
 .contenteditlabel{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    border: 0px solid blue;
 }
 #inputeditlabel{
     border: none;
     outline: none;
     border-bottom:1px solid gainsboro;
 }
-.done{
-    height: 20px;
-    width: 20px;
-    position: relative;
-    left: 20px;
-}
-.close{
-    height: 20px;
-    width: 20px;
-    position: relative;
-    left: 5px;
-}
 .buttondone{
     background: none;
     border: none;
     position: relative;
-    top: 10px;
+    top: 20px;
     left: 220px;
 }
 .postedlabel{
     border: none;
     outline: none;
-    border-bottom:1px solid gainsboro;
 }
 .line{
     border-top: gainsboro;
@@ -655,13 +660,10 @@ font-size: 15px;
     width: auto;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between;
-    align-items: center; */
     border: 0px solid red;
-    border-bottom:1px solid gainsboro;
 }
 .updatedlabel{
-    height: auto;
+    height: 40px;
     width: auto;
     display: flex;
     flex-direction: row;
@@ -669,8 +671,58 @@ font-size: 15px;
     align-items: center;
 
 }
-/* #editlabel{
+.creatingdiv{
+    height: 40px;
+    width: 270px;
+    display: flex;
+    flex-direction: row;
+    border: 0px solid red;
+    justify-content: space-between;
+    align-items: center;
+}
+#editlabel{
     height: 500px;
-    width: 350px;
-    border: 1px solid red;
-} */
+    width: 300px;
+    border: 0px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.original-icon {
+    display: block;
+  }
+  
+  .new-icon {
+    display: none;
+  }
+  
+  .updatedlabel:hover .original-icon {
+    display: none;
+  }
+  
+  .updatedlabel:hover .new-icon {
+    display: block;
+  }
+  .original-icon1 {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+.new-icon1 {
+    display: none;
+    width: 50px;
+    height: 50px;
+}
+
+.postedlabel {
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.postedlabel.editable {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: text;
+}
+  

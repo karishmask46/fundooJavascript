@@ -6,41 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="/practices/array.js"></script>
     <title>Document</title>
     <style>
         .maindiv {
             height: 30px;
             width: 500px;
             border: 0px solid black;
-            color:black;
+            color: black;
         }
-        #topdiv{
+
+        #topdiv {
             height: 70px;
             width: 500px;
             border: 1px solid black;
-            color:black;
+            color: black;
         }
-       #mainbox{
-        height: 270px;
+
+        #mainbox {
+            height: 270px;
             width: 500px;
             border: 0px solid black;
-            color:black;
-       }
+            color: black;
+        }
+
         .subdiv {
             border: 0px solid black;
         }
-        
+
+
+
+
+        .original-icon1 {
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+
+        .new-icon1 {
+            display: none;
+            width: 50px;
+            height: 50px;
+        }
+
+        .postedlabel {
+            border: none;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        .postedlabel.editable {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: text;
+        }
     </style>
 </head>
 
 <body>
-    <div class="main" id="mainbox" >
-       
+    <div class="icon-wrapper">
+        <img src="/assets/edit.png" alt="Original icon" class="original-icon1">
+        <img src="/assets/done_FILL0_wght400_GRAD0_opsz48.svg" alt="New icon" class="new-icon1"  id="${value.id}"  alt="" onclick="updateLabel(this)">
+        <input type="text"  class="postedlabel" id="postlabel" value="${value.label}" readonly>
     </div>
-    <div class="updatedlabel"><img src="/assets/delete_FILL0_wght400_GRAD0_opsz48.svg"  alt="" height="20px"
-        width="20px"><p>`+value.label+`</p> <img src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg"  alt="" height="20px"
-        width="20px"></div>
-</body>
 
+
+
+    <!-- <div class="main" id="mainbox">
+
+    </div>
+    <div class="updatedlabel"><img src="/assets/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="20px"
+            width="20px">
+        <p>`+value.label+`</p> <img src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="20px" width="20px">
+    </div> -->
+</body>
+<script src="/practices/array.js"></script>
 </html>

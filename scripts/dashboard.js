@@ -369,7 +369,7 @@ function editlabel() {
       })
     }
   })
-  $(".done").on("click", function () {
+  $("#Donebutton").on("click", function () {
     var inputtext = $("#inputeditlabel").val();
     var userid = localStorage.getItem('userid')
     console.log(inputtext);
@@ -410,14 +410,20 @@ $(function () {
       console.log(labeltext);
 
       $.each(labeltext, function (key, value) {
-        $(".sidenav").append(`<div class="sidenavicons" id="sidenavicon" tabindex=3>
+        $(".sidenavlabel").append(`<div class="sidenaviconslbel" id="sidenavicon" tabindex=3>
         <img id="sidenavimg3" src="/assets/label_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
             alt="">
         <label id="sidenavelabel" for="">`+ value.label + `</label>
     </div>`)
-        $("#getlabellist").append(`<div class="updatedlabel"><img src="/assets/delete_FILL0_wght400_GRAD0_opsz48.svg" id="${value.id}" onclick="deleteLabel(this)"  alt="" height="20px"
-    width="20px"> <input type="text" class="postedlabel" id="postlabel" value="${value.label}"> <img src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" id="${value.id}"  alt="" onclick="updateLabel(this)" height="20px"
-    width="20px"></div>`)
+        $("#getlabellist").append(`<div class="updatedlabel"><img src="/assets/label.svg"  class="original-icon"   alt="" height="20px"
+    width="20px"> <img src="/assets/trash--v1.png" class="new-icon" alt="" height="20px" width="20px" id="${value.id}" onclick="deleteLabel(this)"> 
+    <div class="icon-wrapper">
+    <img src="/assets/edit.png" alt="Original icon" class="original-icon1">
+    <img src="/assets/done_FILL0_wght400_GRAD0_opsz48.svg" alt="New icon" class="new-icon1"  id="${value.id}"  alt="" onclick="updateLabel(this)">
+    <input type="text"  class="postedlabel" id="postlabel" value="${value.label}" readonly>
+</div>
+
+    </div>`)
       })
     },
     error: function (error) {
@@ -426,6 +432,25 @@ $(function () {
 
   });
 });
+
+// const iconWrapper = document.getElementsByClassName('.icon-wrapper');
+// const originalIcon = document.getElementsByClassName('.original-icon1');
+// const newIcon = document.getElementsByClassName('.new-icon1');
+// const editableInput = document.getElementsByClassName('.postedlabel');
+// console.log(iconWrapper, "icon clikwed");
+// originalIcon.addEventListener('click', function () { 
+//   originalIcon.style.display = 'none';
+//   newIcon.style.display = 'block';
+//   editableInput.classList.add('editable');
+//   editableInput.removeAttribute('readonly');
+// });
+
+// newIcon.addEventListener('click', function () {
+//   newIcon.style.display = 'none';
+//   originalIcon.style.display = 'block';
+//   editableInput.classList.remove('editable');
+//   editableInput.setAttribute('readonly', true);
+// });
 
 function deleteLabel(deleteId) {
   var id = $(deleteId).attr('id')
@@ -443,14 +468,14 @@ function deleteLabel(deleteId) {
     }
   });
 }
-function updateLabel(updateID){
- var labelId=$(updateID).attr('id');
- var newLabel=$("#postlabel").val();
- var id= localStorage.getItem('userid')
-  let updateLabelObj={
+function updateLabel(updateID) {
+  var labelId = $(updateID).attr('id');
+  var newLabel = $("#postlabel").val();
+  var id = localStorage.getItem('userid')
+  let updateLabelObj = {
     "label": newLabel,
     "isDeleted": false,
-    "id":labelId ,
+    "id": labelId,
     "userId": id
   }
   $.ajax({
@@ -467,7 +492,7 @@ function updateLabel(updateID){
       console.error(error);
     }
   });
-  
+
 }
 function getarchivenotes() {
   window.location.href = "/templates/archivenotes.html"
