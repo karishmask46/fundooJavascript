@@ -5,9 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="/scripts/dashboard.js"></script>
+    <script src="/jquery/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="/jquery/jquery-ui.structure.css">
+    <link rel="stylesheet" href="/jquery/jquery-ui.theme.css">
+    <link rel="stylesheet" href="/styles/dashboard.css">
     <title>Dashboard</title>
 </head>
+
 <body>
     <div class="main">
         <header class="header">
@@ -53,7 +60,7 @@
                     <label id="sidenavelabel" for="">Remainder</label>
                 </div>
                 <div class="sidenavlabel">
-                    
+
                 </div>
                 <div class="sidenavicons" id="sidenavicon" tabindex=4 onclick="editlabel()">
                     <img id="sidenavimg4" src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
@@ -138,24 +145,17 @@
         </div>
         <div class="contenteditlabel">
             <div class="creatingdiv">
-                <img src="/assets/close_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="20px"
-                width="20px">
+                <img src="/assets/close_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="20px" width="20px">
                 <input id="inputeditlabel" type="text" placeholder="Create new label">
                 <img id="Donebutton" src="/assets/done_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="20px"
-                width="20px">
+                    width="20px">
             </div>
             <div class="createdlabel" id="getlabellist">
             </div>
             <div style="border-bottom:1px solid gainsboro;"></div>
-            <div><button class="buttondone">Done</button></div>
+            <div id="donechange"><button class="buttondone">Done</button></div>
         </div>
     </div>
-    <img src="/assets/trash--v1.png" alt="" height="20px" width="20px">
 </body>
-<script src="/scripts/dashboard.js"></script>
-<script src="/jquery/jquery-ui.js"></script>
-<link rel="stylesheet" href="/jquery/jquery-ui.css">
-    <link rel="stylesheet" href="/jquery/jquery-ui.structure.css">
-    <link rel="stylesheet" href="/jquery/jquery-ui.theme.css">
-    <link rel="stylesheet" href="/styles/dashboard.css">
+
 </html>

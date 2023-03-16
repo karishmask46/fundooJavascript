@@ -115,17 +115,19 @@
     align-items: center;
     justify-content: space-around;
 }
-.sidenavicons:hover{
+
+.sidenavicons:hover {
     background-color: rgba(0, 0, 0, 0.039);
     border-radius: 0px 20px 20px 0px;
-  }
-  
-  .sidenavicons:focus, .sidenavicons:active{
+}
+
+.sidenavicons:focus,
+.sidenavicons:active {
     background-color: #feefc3;
     border-radius: 0px 20px 20px 0px;
-  }
+}
 
-.sidenavlabel{
+.sidenavlabel {
     height: auto;
     width: 250px;
     border: 0px solid red;
@@ -134,7 +136,8 @@
     align-items: center;
     justify-content: space-around;
 }
-.sidenaviconslbel{
+
+.sidenaviconslbel {
     height: 40px;
     width: 250px;
     border: 0px solid red;
@@ -143,6 +146,7 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
 #sidenavelabel {
     height: 40px;
     width: 150px;
@@ -184,13 +188,15 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
-.totalcreatediv{
+
+.totalcreatediv {
     height: auto;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .createnote {
     height: 40px;
     width: 600px;
@@ -240,7 +246,8 @@
     position: relative;
     right: 20px;
 }
-.close{
+
+.close {
     border: none;
     background: none;
     position: relative;
@@ -255,6 +262,7 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .iconslistupdate {
     height: 35px;
     width: 550px;
@@ -263,6 +271,7 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .listiconsupdate {
     height: 35px;
     width: 60%;
@@ -270,6 +279,7 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .listicons {
     height: 45px;
     width: 60%;
@@ -277,7 +287,8 @@
     align-items: center;
     justify-content: space-around;
 }
-.uppergetnote{
+
+.uppergetnote {
     height: auto;
     width: 100%;
     margin: 0px;
@@ -291,6 +302,7 @@
     flex-wrap: wrap;
     cursor: pointer;
 }
+
 .getnote {
     height: auto;
     width: auto;
@@ -315,10 +327,11 @@
     border-radius: 7px;
     box-sizing: border-box;
 }
+
 .listnotes.foo {
     width: 500px;
-  }
-  
+}
+
 .titlediv {
     height: 75px;
     width: 100%;
@@ -464,6 +477,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .list2 {
     height: 45px;
     width: 45px;
@@ -474,6 +488,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .list3 {
     height: 45px;
     width: 45px;
@@ -484,6 +499,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .list4 {
     height: 45px;
     width: 45px;
@@ -494,6 +510,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .list5 {
     height: 45px;
     width: 45px;
@@ -504,6 +521,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .list6 {
     height: 45px;
     width: 45px;
@@ -514,6 +532,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .list7 {
     height: 45px;
     width: 45px;
@@ -524,6 +543,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .list8 {
     height: 45px;
     width: 45px;
@@ -534,6 +554,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .list9 {
     height: 45px;
     width: 45px;
@@ -544,6 +565,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .colors {
     height: 40px;
     width: 40px;
@@ -602,67 +624,78 @@
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
 }
-.update{
+
+.update {
     display: flex;
     flex-direction: column;
 }
-.inputfileds{
+
+.inputfileds {
     height: 80px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
 }
-.updatetitle{
-outline: none;
-border: none;
-background: none;
-position: relative;
-bottom: 20px;
-font-weight: 600;
-font-size: 15px;
-}
-.updatedesc{
+
+.updatetitle {
     outline: none;
-border: none;
-background: none;
-position: relative;
-bottom: 20px;
-font-size: 15px;
+    border: none;
+    background: none;
+    position: relative;
+    bottom: 20px;
+    font-weight: 600;
+    font-size: 15px;
 }
-.contenteditlabel{
+
+.updatedesc {
+    outline: none;
+    border: none;
+    background: none;
+    position: relative;
+    bottom: 20px;
+    font-size: 15px;
+}
+
+.contenteditlabel {
     display: flex;
     flex-direction: column;
     border: 0px solid blue;
 }
-#inputeditlabel{
+
+#inputeditlabel {
     border: none;
     outline: none;
-    border-bottom:1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
 }
-.buttondone{
+
+.buttondone {
     background: none;
     border: none;
     position: relative;
     top: 20px;
     left: 220px;
 }
-.postedlabel{
+
+.postedlabel {
     border: none;
     outline: none;
 }
-.line{
+
+.line {
     border-top: gainsboro;
     width: 250px;
 }
-.createdlabel{
+
+.createdlabel {
     height: auto;
     width: auto;
     display: flex;
     flex-direction: column;
     border: 0px solid red;
 }
-.updatedlabel{
+
+.updatedlabel {
     height: 40px;
     width: auto;
     display: flex;
@@ -671,7 +704,8 @@ font-size: 15px;
     align-items: center;
 
 }
-.creatingdiv{
+
+.creatingdiv {
     height: 40px;
     width: 270px;
     display: flex;
@@ -680,32 +714,35 @@ font-size: 15px;
     justify-content: space-between;
     align-items: center;
 }
-#editlabel{
+
+#editlabel {
     height: 500px;
     width: 300px;
     border: 0px solid red;
     display: flex;
     flex-direction: column;
 }
+
 .original-icon {
     display: block;
-  }
-  
-  .new-icon {
+}
+
+.new-icon {
     display: none;
-  }
-  
-  .updatedlabel:hover .original-icon {
+}
+
+.updatedlabel:hover .original-icon {
     display: none;
-  }
-  
-  .updatedlabel:hover .new-icon {
+}
+
+.updatedlabel:hover .new-icon {
     display: block;
-  }
-  .original-icon1 {
+}
+
+.original-icon1 {
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
 }
 
 .new-icon1 {
@@ -725,4 +762,20 @@ font-size: 15px;
     background-color: #fff;
     cursor: text;
 }
-  
+
+.icon-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+/* body.modal-open .main{
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+} */
+/* .modal-open .main {
+    -webkit-filter: blur(5px) grayscale(90%);
+    filter: blur(5px) grayscale(90%);
+} */

@@ -1,3 +1,9 @@
+// const userService=require('give file path')
+// const userService=new UserService()
+
+
+
+
 var arrayData = [];
 var filterArray = [];
 var labeltext = [];
@@ -105,9 +111,6 @@ $(function () {
       })
       $('#searchid').on("keyup", function () {
         var query = $('#searchid').val();
-        // arrayData = arrayData.filter((k) => {
-        //   return k.isArchived == false && k.isDeleted == false;
-        // })
         console.log(query);
         var filteredNotes = filterArray.filter(function (note) {
           return note.title.indexOf(query) > -1 || note.description.indexOf(query) > -1
@@ -116,7 +119,7 @@ $(function () {
         $('.getnote').empty();
         $.each(filteredNotes, function (key, value) {
           $('.getnote').append(`<div class="listnotes" style="background-color:${value.color} ;">
-          <div class= "titlediv" id="${value.title}" title="${value.description}" value="${value.id}"  style="background-color:${value.color} ;" onclick="openPopUp(this)" >
+          <div class= "titlediv" id="${value.title}" title="${value.description}" value="${value.id}" style="${value.color}"   onclick="openPopUp(this)" >
               <div class="pushpindiv">
                   <p class="gettitle" id="titleId">`+ value.title + `</p>
 
@@ -180,11 +183,6 @@ $(function () {
   });
 });
 
-function search() {
-
-}
-
-
 function setArchive(noteitem) {
   console.log(noteitem);
   let noteid = $(noteitem).attr('id')
@@ -243,7 +241,7 @@ function deletenote(deleteparam) {
 
 function openPopUp(element) {
   var id = $(element).attr('value')
-  console.log(id);
+  var styleId=$(element).attr('style')
   $("#methods").dialog({
     maxWidth: 570,
     maxHeight: 200,
@@ -253,13 +251,14 @@ function openPopUp(element) {
     draggable: true,
     resizable: true,
     closeOnEscape: false,
-    open: function () {
+    open: function (e) {
+      $(e.target).parent().css('background-color',styleId);
       $(".ui-widget-overlay").on("click", function () {
         $("#methods").dialog('close');
         $(".ui-dialog-titlebar").empty("");
         $(".update").empty("");
       })
-      $(".ui-dialog-content").append(`<div class="update" id="updatecolor">
+      $(".ui-dialog-content").append(`<div class="update" id="updatecolor" >
       <div class="inputfileds">
       <input type="text" class="updatetitle" id="text">
                   <input type="text" class="updatedesc" id="desctext">
@@ -288,7 +287,6 @@ function openPopUp(element) {
 
     }
   });
-  document.getElementById("updatecolor").css = element.style
   document.getElementById("text").value = element.id
   document.getElementById("desctext").value = element.title
 
@@ -395,8 +393,8 @@ function editlabel() {
 
     });
   })
-
 }
+
 
 $(function () {
   $.ajax({
@@ -418,9 +416,8 @@ $(function () {
         $("#getlabellist").append(`<div class="updatedlabel"><img src="/assets/label.svg"  class="original-icon"   alt="" height="20px"
     width="20px"> <img src="/assets/trash--v1.png" class="new-icon" alt="" height="20px" width="20px" id="${value.id}" onclick="deleteLabel(this)"> 
     <div class="icon-wrapper">
-    <img src="/assets/edit.png" alt="Original icon" class="original-icon1">
-    <img src="/assets/done_FILL0_wght400_GRAD0_opsz48.svg" alt="New icon" class="new-icon1"  id="${value.id}"  alt="" onclick="updateLabel(this)">
-    <input type="text"  class="postedlabel" id="postlabel" value="${value.label}" readonly>
+    <input type="text"  class="postedlabel" id="postlabel" value="${value.label}" >
+    <img src="/assets/edit.png" alt="" class="original-icon1"  id="${value.id}"  onclick="updateLabel(this)">
 </div>
 
     </div>`)
@@ -432,25 +429,6 @@ $(function () {
 
   });
 });
-
-// const iconWrapper = document.getElementsByClassName('.icon-wrapper');
-// const originalIcon = document.getElementsByClassName('.original-icon1');
-// const newIcon = document.getElementsByClassName('.new-icon1');
-// const editableInput = document.getElementsByClassName('.postedlabel');
-// console.log(iconWrapper, "icon clikwed");
-// originalIcon.addEventListener('click', function () { 
-//   originalIcon.style.display = 'none';
-//   newIcon.style.display = 'block';
-//   editableInput.classList.add('editable');
-//   editableInput.removeAttribute('readonly');
-// });
-
-// newIcon.addEventListener('click', function () {
-//   newIcon.style.display = 'none';
-//   originalIcon.style.display = 'block';
-//   editableInput.classList.remove('editable');
-//   editableInput.setAttribute('readonly', true);
-// });
 
 function deleteLabel(deleteId) {
   var id = $(deleteId).attr('id')
@@ -470,13 +448,14 @@ function deleteLabel(deleteId) {
 }
 function updateLabel(updateID) {
   var labelId = $(updateID).attr('id');
+  console.log(labelId);
   var newLabel = $("#postlabel").val();
-  var id = localStorage.getItem('userid')
+  var user = localStorage.getItem('userid')
   let updateLabelObj = {
     "label": newLabel,
     "isDeleted": false,
     "id": labelId,
-    "userId": id
+    "userId": user
   }
   $.ajax({
     type: "POST",
@@ -486,7 +465,7 @@ function updateLabel(updateID) {
     headers: { "Authorization": localStorage.getItem('token') },
     success: function (data) {
       console.log(data);
-      window.location.reload();
+      // window.location.reload();
     },
     error: function (error) {
       console.error(error);
@@ -550,4 +529,5 @@ $(function () {
     $('.listnotes').toggleClass('foo');
   });
 })
+
 
