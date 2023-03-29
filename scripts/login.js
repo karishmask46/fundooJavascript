@@ -27,3 +27,5 @@ $(function () {
 function createaccount(){
   window.location.href="/templates/Registration/register.html"
 }
+
+

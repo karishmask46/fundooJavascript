@@ -18,6 +18,8 @@
     border: 1px solid gainsboro;
     align-items: center;
     justify-content: baseline;
+    position: fixed;
+    z-index: -100;
 
 }
 
@@ -96,20 +98,20 @@
     height: 500px;
     width: 250px;
     border: 0px solid red;
-    margin: 10px;
+    margin: 61px;
     display: flex;
     align-items: center;
     flex-direction: column;
     position: relative;
-    left: -20px;
-    z-index: 2;
+    left: -75px;
     overflow-x: hidden;
     transition: 0.5s;
+    position: fixed;
 }
 
 .sidenavicons {
     height: 40px;
-    width: 250px;
+    width: 230px;
     border: 0px solid red;
     display: flex;
     align-items: center;
@@ -401,7 +403,6 @@
     background-color: #f9f9f9;
     min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
 }
 
 .dropdown-content a {

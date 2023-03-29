@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Input Form</title>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+	<script>
+		$(document).ready(function(){
+			$("#submit-btn").click(function(){
+				if($("#input-form").valid()){
+					var email = $("#email-input").val();
+					var phone = $("#phone-input").val();
+					$("#result").text("Email: " + email + ", Phone: " + phone);
+				}
+            })
+            $("#input-form").validate({
+				rules: {
+					email: {
+						required: true,
+						email: true
+					},
+					phone: {
+						required: true,
+						pattern: /^\d{10}$/
+					}
+				},
+				messages: {
+					email: {
+						required: "Email is required",
+						email: "Please enter a valid email address"
+					},
+					phone: {
+						required: "Phone number is required",
+						pattern: "Please enter a valid 10-digit phone number"
+					}
+				},
+				errorPlacement: function(error, element) {
+					error.appendTo(element.parent());
+				}
+			});
+		});
+	</script>
+    <form id="input-form">
+		<label for="email-input">Email:</label>
+		<input type="email" id="email-input" name="email">
+		<br>
+		<label for="phone-input">Phone:</label>
+		<input type="tel" id="phone-input" name="phone" pattern="^\d{10}$">
+		<br>
+		<button type="button" id="submit-btn">Submit</button>
+	</form>
+	<div id="result"></div>
+</body>
+</html>

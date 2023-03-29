@@ -18,6 +18,7 @@
     border: 1px solid gainsboro;
     align-items: center;
     justify-content: baseline;
+    position: fixed;
 
 }
 
@@ -96,12 +97,12 @@
     height: 500px;
     width: 250px;
     border: 0px solid red;
-    margin: 10px;
+    margin: 61px;
     display: flex;
     align-items: center;
     flex-direction: column;
     position: relative;
-    left: -20px;
+    left: -65px;
     z-index: 2;
     overflow-x: hidden;
     transition: 0.5s;
@@ -109,7 +110,7 @@
 
 .sidenavicons {
     height: 40px;
-    width: 250px;
+    width: 230px;
     border: 0px solid red;
     display: flex;
     align-items: center;
@@ -159,6 +160,7 @@
     width: 100vw;
     display: flex;
     flex-direction: row;
+    position: fixed;
 }
 
 .centerportion {

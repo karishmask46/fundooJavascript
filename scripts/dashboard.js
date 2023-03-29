@@ -465,7 +465,6 @@ function updateLabel(updateID) {
     headers: { "Authorization": localStorage.getItem('token') },
     success: function (data) {
       console.log(data);
-      // window.location.reload();
     },
     error: function (error) {
       console.error(error);
