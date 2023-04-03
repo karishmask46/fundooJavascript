@@ -16,11 +16,9 @@ $(function () {
       success: function (data) {
         console.log(data);
         console.log("Form submitted successfully.");
-        alert("registration successful")
       },
       error: function (error) {
         console.error(error);
-        alert('Registration failed, please try again');
       }
     });
   });
@@ -35,5 +33,13 @@ $(function () {
   });
 });
 function signin(){
+  window.location.href="/templates/login/login.html"
+}
+let popup=document.getElementById("PopUp")
+function openpopup(){
+popup.classList.add("open-popup")
+}
+function closepopup(){
+  popup.classList.remove("open-popup")
   window.location.href="/templates/login/login.html"
 }

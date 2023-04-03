@@ -22,7 +22,7 @@
                 <div class="keep">
                     <img id="menu" src="/assets/menu_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt=""
                         onclick="toggleNav()">
-                    <img src="/assets/keep_2020q4_48dp.png" height="40px" width="38px" alt="">
+                    <img class="keepIcon" src="/assets/keep_2020q4_48dp.png" height="40px" width="38px" alt="">
                     <span class="keeptext">Keep</span>
                 </div>
                 <div class="search">
@@ -31,50 +31,58 @@
                         <img id="searchicon" src="/assets/search_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="25px"
                             width="25px">
                     </div>
-                    <img src="/assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+                    <div class="boxsearch">
+                        <input type="checkbox" name="tag" id="label">
+                        <div class="searchbox">
+                          <input type="text" placeholder="Search">
+                          <label for="label" class="btn">
+                            <img class="searchIcon" src="/assets/search_FILL0_wght400_GRAD0_opsz48.svg">
+                          </label>
+                        </div>
+                  
+                      </div>
+                    <img class="refreshIcon" src="/assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" height="25px"
+                        width="25px" alt="">
                     <div>
                         <img id="listview" class="gridview" src="/assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg"
                             height="25px" width="25px" alt="">
                         <img id="grid" class="gridclass" style="display: none;"
                             src="/assets/grid_view_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
                     </div>
-                    <img src="/assets/settings_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
+                    <img class="settingsIcon" src="/assets/settings_FILL0_wght400_GRAD0_opsz48.svg" height="25px"
+                        width="25px" alt="">
                 </div>
                 <div class="account">
-                    <img src="/assets/apps_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
-                    <img onclick="logout()" src="/assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" height="25px"
-                        width="25px" alt="">
+                    <img class="appsIcon" src="/assets/apps_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px"
+                        alt="">
+                    <img class="AccountIcon" onclick="logout()"
+                        src="/assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" height="25px" width="25px" alt="">
                 </div>
             </div>
         </header>
         <div class="container">
             <div class="sidenav" id="side">
                 <div class="sidenavicons" id="sidenavicon" tabindex=1>
-                    <img id="sidenavimg1" src="/assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" height="30px"
-                        width="30px" alt="">
+                    <img id="sidenavimg1" src="/assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" alt="">
                     <label id="sidenavelabel" for="">Notes</label>
                 </div>
                 <div class="sidenavicons" id="sidenavicon" tabindex=2>
-                    <img id="sidenavimg2" src="/assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" height="30px"
-                        width="30px" alt="">
+                    <img id="sidenavimg2" src="/assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" alt="">
                     <label id="sidenavelabel" for="">Remainder</label>
                 </div>
                 <div class="sidenavlabel">
 
                 </div>
                 <div class="sidenavicons" id="sidenavicon" tabindex=4 onclick="editlabel()">
-                    <img id="sidenavimg4" src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
-                        alt="">
+                    <img id="sidenavimg4" src="/assets/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="">
                     <label id="sidenavelabel" for="">Edit labels</label>
                 </div>
                 <div class="sidenavicons" onclick="getarchivenotes()" id="sidenavicon" tabindex=5>
-                    <img id="sidenavimg5" src="/assets/archive_FILL0_wght400_GRAD0_opsz48.svg" height="30px"
-                        width="30px" alt="">
+                    <img id="sidenavimg5" src="/assets/archive_FILL0_wght400_GRAD0_opsz48.svg" alt="">
                     <label id="sidenavelabel" for="">Archive</label>
                 </div>
                 <div class="sidenavicons" onclick="gettrashnote()" id="sidenavicon" tabindex=6>
-                    <img id="sidenavimg6" src="/assets/delete_FILL0_wght400_GRAD0_opsz48.svg" height="30px" width="30px"
-                        alt="">
+                    <img id="sidenavimg6" src="/assets/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="">
                     <label id="sidenavelabel" for="">Trash</label>
                 </div>
             </div>

@@ -18,8 +18,11 @@
     border: 1px solid gainsboro;
     align-items: center;
     justify-content: baseline;
-    position: fixed;
-    z-index: -100;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    background: white;
+    
 
 }
 
@@ -98,15 +101,17 @@
     height: 500px;
     width: 250px;
     border: 0px solid red;
-    margin: 61px;
+    margin: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
     position: relative;
-    left: -75px;
+    left: -20px;
+    z-index: 2;
     overflow-x: hidden;
     transition: 0.5s;
     position: fixed;
+    top: 60px;
 }
 
 .sidenavicons {
@@ -141,7 +146,7 @@
 
 .sidenaviconslbel {
     height: 40px;
-    width: 250px;
+    width: 230px;
     border: 0px solid red;
     display: flex;
     align-items: center;
@@ -162,13 +167,16 @@
     justify-content: flex-start;
 }
 
-#sidenavimg1 #sidenavimg2 #sidenavimg3 #sidenavimg4 #sidenavimg5 #sidenavimg6 {
-    height: 30px;
-    width: 30px;
+#sidenavimg1,
+#sidenavimg2,
+#sidenavimg3,
+#sidenavimg4,
+#sidenavimg5,
+#sidenavimg6 {
+    height: 25px;
+    width: 25px;
     display: flex;
     border: 0px solid red;
-    /* position: relative;
-    left: 40px; */
 }
 
 #menu {
@@ -177,18 +185,28 @@
 }
 
 .container {
-    height: 100vh;
+    height: auto;
     width: 100vw;
     display: flex;
     flex-direction: row;
+    z-index: -1;
+    /* position: sticky;
+    top: 0px; */
+    border: 0px solid red;
 }
 
 .centerportion {
     height: auto;
-    width: 78vw;
+    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    box-sizing: border-box;
+    position: relative;
+    top: 10px;
+    left: 200px;
+    z-index: -2;
+    border: 0px solid blue;
 }
 
 .totalcreatediv {
@@ -206,6 +224,8 @@
     margin: 40px;
     box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
     border-radius: 5px;
+    position: sticky;
+    top: 0px;
 }
 
 .iconsoftitile {
@@ -443,7 +463,7 @@
     min-width: 140px;
     max-height: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+
 }
 
 .dropdown-content1 #list {
@@ -601,7 +621,6 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    z-index: 1000;
 }
 
 #example div {
@@ -768,15 +787,235 @@
     display: flex;
     flex-direction: row;
 }
+.boxsearch {
+  display: none;
+}
 
-/* body.modal-open .main{
-    -webkit-filter: blur(4px);
-    -moz-filter: blur(4px);
-    -o-filter: blur(4px);
-    -ms-filter: blur(4px);
-    filter: blur(4px);
-} */
-/* .modal-open .main {
-    -webkit-filter: blur(5px) grayscale(90%);
-    filter: blur(5px) grayscale(90%);
-} */
+@media screen and (min-width:300px) and (max-width:797px) {
+    .header {
+        margin: -11px;
+        width: 1400px;
+        height: 150px;
+    }
+
+    #menu {
+        height: 50px;
+        width: 50px;
+        position: relative;
+        left: 80px;
+    }
+
+    .gridview {
+        display: none;
+    }
+
+    .searchdiv {
+        display: none;
+    }
+
+    .settingsIcon {
+        height: 80px;
+        width: 80px;
+        position: relative;
+        left: 200px;
+    }
+
+    .refreshIcon {
+        height: 80px;
+        width: 80px;
+        position: relative;
+        left: 250px;
+    }
+
+    .AccountIcon {
+        height: 80px;
+        width: 80px;
+        position: relative;
+        left: 200px;
+    
+    }
+
+    .keepIcon {
+        height: 100px;
+        width: 100px;
+        position: relative;
+        left: 100px;
+    }
+
+    .keeptext {
+        font-size: 50px;
+        position: relative;
+        left: 100px;
+    }
+
+    .appsIcon {
+        display: none;
+    }
+
+    .createnote {
+        margin: 0px;
+        width: 300px;
+        position: relative;
+        left: 164px;
+        border: 0px solid red;
+    }
+
+    .container {
+        margin: 0px;
+        width: 700px;
+        height: 1000px;
+        position: relative;
+        left: 500px;
+    }
+
+    .centerportion {
+        border: 0px solid red;
+        width: 100%;
+    }
+
+    .sidenav {
+        height: 500px;
+        width: 250px;
+        border: 0px solid red;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        left: -20px;
+        z-index: 2;
+        overflow-x: hidden;
+        transition: 0.5s;
+        position: fixed;
+        top: 150px;
+    }
+    
+    .sidenavicons {
+        height: 60px;
+        width: 230px;
+        border: 0px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .sidenavicons:hover {
+        background-color: rgba(0, 0, 0, 0.039);
+        border-radius: 0px 30px 30px 0px;
+    }
+    
+    .sidenavicons:focus,
+    .sidenavicons:active {
+        background-color: #feefc3;
+        border-radius: 0px 30px 30px 0px;
+    }
+    
+    .sidenavlabel {
+        height: auto;
+        width: 250px;
+        border: 0px solid red;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .sidenaviconslbel {
+        height: 40px;
+        width: 230px;
+        border: 0px solid red;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    #sidenavelabel {
+        height: 40px;
+        width: 150px;
+        display: flex;
+        font-weight: 500;
+        font-family: "Roboto", arial, sans-serif;
+        font-size: 20px;
+        border: 0px solid red;
+        align-items: center;
+        color: #101112e8;
+        justify-content: flex-start;
+    }
+    
+    #sidenavimg1,
+    #sidenavimg2,
+    #sidenavimg3,
+    #sidenavimg4,
+    #sidenavimg5,
+    #sidenavimg6 {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        border: 0px solid red;
+    }
+
+    .boxsearch {
+        display: block;
+        width: 239px;
+       position: relative;
+       left: 300px;
+    }
+
+    .boxsearch .searchbox {
+        max-width: 50px;
+        margin: auto;
+        position: relative;
+        height: 50px;
+        right: -22px;
+        border-radius: 30px;
+        border: none;
+        transition: .5s;
+    }
+
+    .searchbox input {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: none;
+        border-radius: 30px;
+        background-color: #efe9e9;
+    }
+
+    .btn {
+        width: 50px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #efe9e9;
+        height: 100%;
+        color: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        border: 0px solid red;
+        cursor: pointer;
+    }
+.searchIcon{
+    height: 40px;
+    width: 40px;
+}
+    #label {
+        display: none;
+    }
+
+    #label:checked~.searchbox {
+        max-width: 380px;
+    }
+
+    #label:checked~.searchbox .btn {
+        border-radius: 0px 30px 30px 0px;
+        background-color: #efe9e9;
+        color: #fff;
+    }
+
+    .srch {
+        display: none;
+    }
+}

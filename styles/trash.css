@@ -18,6 +18,8 @@
     border: 1px solid gainsboro;
     align-items: center;
     justify-content: baseline;
+    position: sticky;
+    top: 0px;
 
 }
 
@@ -105,6 +107,8 @@
     z-index: 2;
     overflow-x: hidden;
     transition: 0.5s;
+    position: fixed;
+    top: 60px;
 }
 
 .sidenavicons {
@@ -158,6 +162,8 @@
     width: 100vw;
     display: flex;
     flex-direction: row;
+    position: fixed;
+    top: 0px;
 }
 
 .centerportion {
@@ -167,6 +173,9 @@
     flex-wrap: wrap;
     flex-direction: row;
     box-sizing: border-box;
+    position: relative;
+    top: 100px;
+    left: 200px;
 }
 
 .iconsoftitile {

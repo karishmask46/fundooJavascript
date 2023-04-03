@@ -507,6 +507,7 @@ $(function () {
 });
 function toggleNav() {
   var nav = document.getElementById("side");
+  var sidenav=document.getElementsByClassName("sidenav")
   var container = document.getElementById("centerpart")
   var center = document.getElementById("uppergetid")
   if (nav.style.width === "250px") {

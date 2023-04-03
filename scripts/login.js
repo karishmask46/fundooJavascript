@@ -2,8 +2,8 @@ $(function () {
   $("#LoginForm").on("submit", function (event) {
     event.preventDefault();
     let obj = {
-      email: $(".get").val(),
-      password: $(".let").val()
+      email: $(".email").val(),
+      password: $(".password").val()
     }
     $.ajax({
       type: "POST",
@@ -11,9 +11,8 @@ $(function () {
       data: obj,
       success: function (data) {
         console.log(data);
+        openpopup();
         localStorage.setItem('token', (data.id))
-        alert("sigin successfull.");
-        window.location.href="/templates/dashboard/dashboard.html"
       },
       error: function (error) {
         console.error(error);
@@ -27,5 +26,11 @@ $(function () {
 function createaccount(){
   window.location.href="/templates/Registration/register.html"
 }
-
-
+let popup=document.getElementById("PopUp")
+function openpopup(){
+popup.classList.add("open-popup")
+}
+function closepopup(){
+  popup.classList.remove("open-popup")
+  window.location.href="/templates/dashboard/dashboard.html"
+}

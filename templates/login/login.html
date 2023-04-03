@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-    <script src="/scripts/login.js"></script>
+    
     <link rel="stylesheet" href="/styles/login.css">
     <title>Login</title>
 </head>
@@ -27,14 +27,14 @@
                     <span>Use your Fundoo Account</span>
                 </div>
                 <div class="content3">
-                    <input id="name" class="get" placeholder=" " type="text" name="email" required>
+                    <input id="email" class="email" placeholder=" " type="text"  required>
                     <label id="user" for="Username">Email</label>
                 </div>
                 <div class="button">
                     <span class="box1">Forgot email?</span>
                 </div>
                 <div class="content4">
-                    <input id="host" class="let" placeholder=" " type="password" name="password" required>
+                    <input id="host" class="password" placeholder=" " type="password" name="password" required>
                     <label id="soft" for="password">Password</label>
                 </div>
                 <div class="button1">
@@ -51,13 +51,18 @@
                         <button class="box5" onclick="createaccount()">Create account</button>
                     </div>
                     <div class="p8">
-                        <button class="box6" type="submit" >Signin</button>
+                        <button class="box6" type="submit" onclick="openpopup()">Signin</button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-
+    <div class="popup" id="PopUp">
+        <h2>Sign in Successful</h2>
+        <p>Youe details are successfully restored</p>
+        <button type="button" onclick="closepopup()">OK</button>
+    </div>
+    <script src="/scripts/login.js"></script>
 </body>
 
 </html>

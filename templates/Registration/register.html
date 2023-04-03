@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="/styles/register.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-    <script src="/scripts/register.js"></script>
+    
     <title>registration</title>
 </head>
+
 <body>
     <div class="maindiv">
         <div class="subdiv">
             <div class="content">
-                <form  id="registrationForm" name="registration">
+                <form id="registrationForm" name="registration">
                     <div class="content1">
                         <span style="color:blue;">F</span>
                         <span style="color:red;">u</span>
@@ -38,7 +39,7 @@
                         </div>
                     </div>
                     <div class="content3">
-                        <input id="name" placeholder=" " type="text" name="email"  required>
+                        <input id="name" placeholder=" " type="text" name="email" required>
                         <label id="user" for="Username">Username</label>
 
                     </div>
@@ -46,11 +47,12 @@
                     <div class="content5">use my current email address instead</div>
                     <div class="con1">
                         <div class="material-textfield">
-                            <input  class="pass" placeholder=" " type="password" id="password" name="password" required>
+                            <input class="pass" placeholder=" " type="password" id="password" name="password" required>
                             <label class="word" for="password">Password</label>
                         </div>
                         <div class="material-textfield1">
-                            <input  class="confirm" placeholder=" "  id="pass" type="password" name="ConfirmPassword" required>
+                            <input class="confirm" placeholder=" " id="pass" type="password" name="ConfirmPassword"
+                                required>
                             <label class="password" for="ConfirmPassword">ConfirmPassword</label>
                         </div>
                     </div>
@@ -58,11 +60,11 @@
                     <div class="content7">use 8 or more characters with a mix of letters,numbers & symbols</div>
 
                     <div class="box">
-                         <input type="checkbox" id="showPassword" /> Show password
+                        <input type="checkbox" id="showPassword" /> Show password
                     </div>
                     <div class="box2">
                         <button class="box3" onclick="signin()">Sign in instead</button>
-                        <button class="box4" type="submit">Next</button>
+                        <button class="box4" type="submit" onclick="openpopup()">Next</button>
                     </div>
                 </form>
             </div>
@@ -75,7 +77,12 @@
             </div>
         </div>
     </div>
+    <div class="popup" id="PopUp">
+        <h2>Registration Successful</h2>
+        <p>Youe details are successfully stored</p>
+        <button type="button" onclick="closepopup()">LOGIN</button>
     </div>
+    <script src="/scripts/register.js"></script>
 </body>
 
 </html>
